@@ -2,301 +2,78 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Gudang Karang 0207</title>
-
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <style>
 *{box-sizing:border-box}
-
-body{
-    margin:0;
-    font-family:Arial,sans-serif;
-    background:#f3f4f6;
-    color:#111827
-}
-
-button,input{
-    font:inherit
-}
-
-.login{
-    min-height:100vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    background:#166534;
-    padding:20px
-}
-
-.login-box{
-    background:white;
-    width:100%;
-    max-width:390px;
-    padding:30px;
-    border-radius:16px;
-    box-shadow:0 10px 30px rgba(0,0,0,.2)
-}
-
-.login-icon{
-    text-align:center;
-    font-size:45px
-}
-
-.login-box h1{
-    text-align:center;
-    font-size:23px;
-    margin:10px 0 5px
-}
-
-.login-box p{
-    text-align:center;
-    color:#6b7280;
-    margin-bottom:25px
-}
-
-.form-group{
-    margin-bottom:15px
-}
-
-label{
-    display:block;
-    font-weight:bold;
-    font-size:14px;
-    margin-bottom:6px
-}
-
-input{
-    width:100%;
-    padding:12px;
-    border:1px solid #d1d5db;
-    border-radius:8px
-}
-
-.btn{
-    border:0;
-    border-radius:8px;
-    padding:11px 15px;
-    cursor:pointer;
-    font-weight:bold
-}
-
-.btn-green{
-    background:#166534;
-    color:white
-}
-
-.btn-red{
-    background:#dc2626;
-    color:white
-}
-
-.login-btn{
-    width:100%
-}
-
-.login-error{
-    display:none;
-    background:#fee2e2;
-    color:#991b1b;
-    padding:10px;
-    border-radius:8px;
-    margin-bottom:15px;
-    font-size:13px
-}
-
-.app{
-    display:none
-}
-
-header{
-    background:#166534;
-    color:white;
-    padding:16px
-}
-
-.header{
-    max-width:1100px;
-    margin:auto;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:10px
-}
-
-.header h1{
-    margin:0;
-    font-size:21px
-}
-
-.header p{
-    margin:4px 0 0;
-    font-size:12px;
-    opacity:.85
-}
-
-.user{
-    text-align:right;
-    font-size:12px
-}
-
-.container{
-    max-width:1100px;
-    margin:auto;
-    padding:20px
-}
-
-nav{
-    display:flex;
-    gap:8px;
-    overflow-x:auto;
-    margin-bottom:20px
-}
-
-nav button{
-    border:0;
-    background:white;
-    padding:11px 15px;
-    border-radius:8px;
-    font-weight:bold;
-    white-space:nowrap;
-    cursor:pointer
-}
-
-nav button.active{
-    background:#166534;
-    color:white
-}
-
-.page{
-    display:none
-}
-
-.page.active{
-    display:block
-}
-
-.cards{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-    gap:15px;
-    margin-bottom:20px
-}
-
-.card{
-    background:white;
-    padding:20px;
-    border-radius:12px;
-    box-shadow:0 2px 8px rgba(0,0,0,.06)
-}
-
-.card-title{
-    color:#6b7280;
-    font-size:14px
-}
-
-.card-number{
-    color:#166534;
-    font-size:30px;
-    font-weight:bold;
-    margin-top:8px
-}
-
-.box{
-    background:white;
-    padding:18px;
-    border-radius:12px;
-    margin-bottom:20px;
-    box-shadow:0 2px 8px rgba(0,0,0,.05)
-}
-
-.box h2{
-    margin:0 0 15px;
-    font-size:18px
-}
-
-.search{
-    margin-bottom:15px
-}
-
-.table-wrap{
-    overflow-x:auto
-}
-
-table{
-    width:100%;
-    border-collapse:collapse;
-    min-width:600px
-}
-
-th,td{
-    padding:12px 9px;
-    border-bottom:1px solid #e5e7eb;
-    text-align:left;
-    font-size:14px
-}
-
-th{
-    background:#f9fafb
-}
-
-.badge{
-    display:inline-block;
-    padding:5px 9px;
-    border-radius:20px;
-    font-size:12px;
-    font-weight:bold
-}
-
-.green{
-    background:#dcfce7;
-    color:#166534
-}
-
-.orange{
-    background:#ffedd5;
-    color:#9a3412
-}
-
-.red{
-    background:#fee2e2;
-    color:#991b1b
-}
-
-.empty{
-    text-align:center;
-    padding:30px;
-    color:#6b7280
-}
-
-.error{
-    background:#fee2e2;
-    color:#991b1b;
-    padding:12px;
-    border-radius:8px;
-    margin-bottom:15px;
-    display:none
-}
-
+body{margin:0;font-family:Arial,sans-serif;background:#f3f4f6;color:#111827}
+button,input,select,textarea{font:inherit}
+button{cursor:pointer}
+.login{min-height:100vh;display:flex;align-items:center;justify-content:center;background:#166534;padding:20px}
+.login-box{background:#fff;width:100%;max-width:400px;padding:30px;border-radius:18px;box-shadow:0 10px 30px #0003}
+.login-icon{text-align:center;font-size:45px}
+.login-box h1{text-align:center;font-size:24px;margin:10px 0 5px}
+.login-box p{text-align:center;color:#6b7280;margin-bottom:25px}
+.form-group{margin-bottom:14px}
+label{display:block;font-weight:bold;font-size:14px;margin-bottom:6px}
+input,select,textarea{width:100%;padding:11px;border:1px solid #d1d5db;border-radius:8px;background:#fff}
+textarea{min-height:80px;resize:vertical}
+input:focus,select:focus,textarea:focus{outline:2px solid #bbf7d0;border-color:#166534}
+.btn{border:0;border-radius:8px;padding:10px 14px;font-weight:bold}
+.btn-primary{background:#166534;color:#fff}
+.btn-secondary{background:#e5e7eb;color:#111827}
+.btn-danger{background:#dc2626;color:#fff}
+.btn-warning{background:#d97706;color:#fff}
+.btn-small{padding:7px 10px;font-size:12px}
+.login-btn{width:100%;margin-top:5px}
+.error{display:none;background:#fee2e2;color:#991b1b;padding:10px;border-radius:8px;margin-bottom:14px;font-size:13px}
+.app{display:none}
+header{background:#166534;color:white;padding:15px}
+.header{max-width:1150px;margin:auto;display:flex;justify-content:space-between;align-items:center;gap:15px}
+.header h1{margin:0;font-size:21px}
+.header p{margin:4px 0 0;font-size:12px;opacity:.85}
+.user{text-align:right;font-size:12px}
+.container{max-width:1150px;margin:auto;padding:18px}
+nav{display:flex;gap:7px;overflow-x:auto;margin-bottom:18px}
+nav button{border:0;background:white;padding:11px 14px;border-radius:8px;font-weight:bold;white-space:nowrap}
+nav button.active{background:#166534;color:white}
+.page{display:none}
+.page.active{display:block}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-bottom:18px}
+.card{background:white;padding:18px;border-radius:12px;box-shadow:0 2px 7px #0000000d}
+.card-title{font-size:13px;color:#6b7280}
+.card-number{font-size:29px;font-weight:bold;color:#166534;margin-top:7px}
+.box{background:#fff;padding:18px;border-radius:12px;margin-bottom:18px;box-shadow:0 2px 7px #0000000d}
+.box h2{margin:0 0 15px;font-size:18px}
+.toolbar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:15px}
+.toolbar input{max-width:350px}
+.table-wrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;min-width:700px}
+th,td{padding:11px 9px;border-bottom:1px solid #e5e7eb;text-align:left;font-size:13px}
+th{background:#f9fafb}
+.badge{display:inline-block;padding:5px 9px;border-radius:20px;font-size:11px;font-weight:bold}
+.green{background:#dcfce7;color:#166534}
+.orange{background:#ffedd5;color:#9a3412}
+.red{background:#fee2e2;color:#991b1b}
+.empty{text-align:center;padding:28px;color:#6b7280}
+.modal{display:none;position:fixed;inset:0;background:#0008;z-index:20;padding:20px;overflow:auto}
+.modal-box{background:white;max-width:600px;margin:30px auto;border-radius:14px;padding:20px}
+.modal-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+.modal-header h2{margin:0;font-size:19px}
+.close{border:0;background:#e5e7eb;border-radius:50%;width:34px;height:34px;font-size:20px}
+.form-actions{display:flex;justify-content:flex-end;gap:8px;margin-top:18px}
+.detail-box{background:#f9fafb;border-radius:9px;padding:12px;margin-bottom:12px}
+.detail-box strong{display:block;margin-bottom:4px}
+.status{font-weight:bold}
 @media(max-width:600px){
-    .container{
-        padding:12px
-    }
-
-    .header{
-        align-items:flex-start
-    }
-
-    .user{
-        font-size:10px
-    }
-
-    .user button{
-        font-size:11px;
-        padding:7px 9px
-    }
+.container{padding:11px}
+.header{align-items:flex-start}
+.header h1{font-size:17px}
+.user{font-size:10px}
+.user .btn{padding:7px 9px;font-size:11px}
+.modal{padding:10px}
 }
 </style>
 </head>
@@ -304,335 +81,439 @@ th{
 <body>
 
 <!-- LOGIN -->
-
 <div id="loginPage" class="login">
-
 <div class="login-box">
-
 <div class="login-icon">📦</div>
-
 <h1>Gudang Karang 0207</h1>
-
 <p>Login Admin Gudang</p>
 
-<div id="loginError" class="login-error"></div>
+<div id="loginError" class="error"></div>
 
 <form onsubmit="login(event)">
-
 <div class="form-group">
-
 <label>Email</label>
-
-<input
-id="email"
-type="email"
-placeholder="Email admin"
-required>
-
+<input id="email" type="email" placeholder="Email admin" required>
 </div>
 
 <div class="form-group">
-
 <label>Password</label>
-
-<input
-id="password"
-type="password"
-placeholder="Password"
-required>
-
+<input id="password" type="password" placeholder="Password" required>
 </div>
 
-<button
-id="loginButton"
-class="btn btn-green login-btn">
-
-MASUK
-
-</button>
-
+<button id="loginButton" class="btn btn-primary login-btn">MASUK</button>
 </form>
-
 </div>
-
 </div>
 
 
 <!-- APP -->
-
 <div id="app" class="app">
 
 <header>
-
 <div class="header">
-
 <div>
-
 <h1>📦 Gudang Karang 0207</h1>
-
 <p>Sistem Inventaris & Peminjaman Barang</p>
-
 </div>
 
 <div class="user">
-
 <div id="userEmail"></div>
-
 <br>
-
-<button
-class="btn btn-red"
-onclick="logout()">
-
-Keluar
-
-</button>
-
+<button class="btn btn-danger btn-small" onclick="logout()">Keluar</button>
 </div>
-
 </div>
-
 </header>
-
 
 <div class="container">
 
 <nav>
-
-<button
-class="active"
-onclick="showPage('dashboard',this)">
-
-🏠 Dashboard
-
-</button>
-
-<button
-onclick="showPage('barang',this)">
-
-📦 Barang
-
-</button>
-
-<button
-onclick="showPage('lokasi',this)">
-
-📍 Lokasi
-
-</button>
-
+<button class="active" onclick="showPage('dashboard',this)">🏠 Dashboard</button>
+<button onclick="showPage('barang',this)">📦 Barang</button>
+<button onclick="showPage('peminjaman',this)">📋 Peminjaman</button>
+<button onclick="showPage('pengembalian',this)">📥 Pengembalian</button>
+<button onclick="showPage('riwayat',this)">📜 Riwayat</button>
+<button onclick="showPage('lokasi',this)">📍 Lokasi</button>
 </nav>
 
 
 <!-- DASHBOARD -->
-
-<section
-id="dashboard"
-class="page active">
+<section id="dashboard" class="page active">
 
 <div class="cards">
 
 <div class="card">
-
-<div class="card-title">
-Jenis Barang
+<div class="card-title">Jenis Barang</div>
+<div id="totalJenis" class="card-number">0</div>
 </div>
-
-<div
-id="totalJenis"
-class="card-number">
-
-0
-
-</div>
-
-</div>
-
 
 <div class="card">
-
-<div class="card-title">
-Total Stok
+<div class="card-title">Total Stok</div>
+<div id="totalStok" class="card-number">0</div>
 </div>
-
-<div
-id="totalStok"
-class="card-number">
-
-0
-
-</div>
-
-</div>
-
 
 <div class="card">
-
-<div class="card-title">
-Lokasi
+<div class="card-title">Lokasi</div>
+<div id="totalLokasi" class="card-number">0</div>
 </div>
 
-<div
-id="totalLokasi"
-class="card-number">
-
-0
-
+<div class="card">
+<div class="card-title">Peminjaman Aktif</div>
+<div id="totalPinjam" class="card-number">0</div>
 </div>
 
 </div>
-
-</div>
-
 
 <div class="box">
-
-<h2>📦 Daftar Barang</h2>
-
-<div
-id="dashboardError"
-class="error">
-</div>
+<h2>📦 Stok Barang</h2>
+<div id="dashboardError" class="error"></div>
 
 <div class="table-wrap">
-
 <table>
-
 <thead>
-
 <tr>
-
 <th>Kode</th>
 <th>Nama Barang</th>
 <th>Stok</th>
 <th>Lokasi</th>
-
 </tr>
-
 </thead>
-
-<tbody
-id="dashboardBody">
-
-</tbody>
-
+<tbody id="dashboardBody"></tbody>
 </table>
-
 </div>
-
 </div>
 
 </section>
 
 
 <!-- BARANG -->
-
-<section
-id="barang"
-class="page">
+<section id="barang" class="page">
 
 <div class="box">
-
 <h2>📦 Data Barang</h2>
 
-<div
-id="barangError"
-class="error">
-</div>
+<div id="barangError" class="error"></div>
 
-<div class="search">
+<div class="toolbar">
+<button class="btn btn-primary" onclick="openBarangModal()">+ Tambah Barang</button>
 
-<input
-id="searchBarang"
-placeholder="Cari kode atau nama barang..."
+<input id="searchBarang"
+placeholder="Cari kode atau nama..."
 oninput="renderBarang()">
-
 </div>
 
 <div class="table-wrap">
-
 <table>
-
 <thead>
-
 <tr>
-
 <th>Kode</th>
 <th>Nama Barang</th>
 <th>Stok</th>
 <th>Lokasi</th>
-
+<th>Aksi</th>
 </tr>
-
 </thead>
-
-<tbody
-id="barangBody">
-
-</tbody>
-
+<tbody id="barangBody"></tbody>
 </table>
-
+</div>
 </div>
 
+</section>
+
+
+<!-- PEMINJAMAN -->
+<section id="peminjaman" class="page">
+
+<div class="box">
+<h2>📋 Peminjaman Barang</h2>
+
+<div id="peminjamanError" class="error"></div>
+
+<div class="toolbar">
+<button class="btn btn-primary" onclick="openPeminjamanModal()">+ Peminjaman Baru</button>
+</div>
+
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Peminjam</th>
+<th>No HP</th>
+<th>Keperluan</th>
+<th>Tanggal Pinjam</th>
+<th>Rencana Kembali</th>
+<th>Status</th>
+<th>Aksi</th>
+</tr>
+</thead>
+<tbody id="peminjamanBody"></tbody>
+</table>
+</div>
+</div>
+
+</section>
+
+
+<!-- PENGEMBALIAN -->
+<section id="pengembalian" class="page">
+
+<div class="box">
+<h2>📥 Pengembalian</h2>
+
+<p style="color:#6b7280">
+Daftar peminjaman yang masih aktif. Pengembalian stok akan kita aktifkan setelah alur transaksi selesai diuji.
+</p>
+
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Peminjam</th>
+<th>Keperluan</th>
+<th>Tanggal Pinjam</th>
+<th>Rencana Kembali</th>
+<th>Status</th>
+<th>Aksi</th>
+</tr>
+</thead>
+<tbody id="pengembalianBody"></tbody>
+</table>
+</div>
+</div>
+
+</section>
+
+
+<!-- RIWAYAT -->
+<section id="riwayat" class="page">
+
+<div class="box">
+<h2>📜 Riwayat Peminjaman</h2>
+
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Peminjam</th>
+<th>Keperluan</th>
+<th>Tanggal</th>
+<th>Status</th>
+<th>Aksi</th>
+</tr>
+</thead>
+<tbody id="riwayatBody"></tbody>
+</table>
+</div>
 </div>
 
 </section>
 
 
 <!-- LOKASI -->
-
-<section
-id="lokasi"
-class="page">
+<section id="lokasi" class="page">
 
 <div class="box">
-
 <h2>📍 Lokasi Penyimpanan</h2>
 
-<div
-id="lokasiError"
-class="error">
+<div id="lokasiError" class="error"></div>
+
+<div class="toolbar">
+<button class="btn btn-primary" onclick="openLokasiModal()">+ Tambah Lokasi</button>
 </div>
 
 <div class="table-wrap">
-
 <table>
-
 <thead>
-
 <tr>
-
+<th>ID</th>
 <th>Nama Lokasi</th>
 <th>Keterangan</th>
-
+<th>Aksi</th>
 </tr>
-
 </thead>
-
-<tbody
-id="lokasiBody">
-
-</tbody>
-
+<tbody id="lokasiBody"></tbody>
 </table>
-
 </div>
-
 </div>
 
 </section>
 
 </div>
+</div>
 
+
+<!-- MODAL BARANG -->
+<div id="barangModal" class="modal">
+
+<div class="modal-box">
+
+<div class="modal-header">
+<h2 id="barangModalTitle">Tambah Barang</h2>
+<button class="close" onclick="closeModal('barangModal')">×</button>
+</div>
+
+<div id="barangFormError" class="error"></div>
+
+<form onsubmit="saveBarang(event)">
+
+<input id="barangId" type="hidden">
+
+<div class="form-group">
+<label>Kode Barang</label>
+<input id="barangKode" required placeholder="Contoh: KRS-001">
+</div>
+
+<div class="form-group">
+<label>Nama Barang</label>
+<input id="barangNama" required placeholder="Contoh: Kursi Plastik">
+</div>
+
+<div class="form-group">
+<label>Jumlah/Stok</label>
+<input id="barangStok" type="number" min="0" required>
+</div>
+
+<div class="form-group">
+<label>Lokasi</label>
+<select id="barangLokasi">
+<option value="">-- Pilih Lokasi --</option>
+</select>
+</div>
+
+<div class="form-actions">
+<button type="button" class="btn btn-secondary" onclick="closeModal('barangModal')">Batal</button>
+<button type="submit" class="btn btn-primary">Simpan</button>
+</div>
+
+</form>
+</div>
+</div>
+
+
+<!-- MODAL LOKASI -->
+<div id="lokasiModal" class="modal">
+
+<div class="modal-box">
+
+<div class="modal-header">
+<h2 id="lokasiModalTitle">Tambah Lokasi</h2>
+<button class="close" onclick="closeModal('lokasiModal')">×</button>
+</div>
+
+<div id="lokasiFormError" class="error"></div>
+
+<form onsubmit="saveLokasi(event)">
+
+<input id="lokasiId" type="hidden">
+
+<div class="form-group">
+<label>Nama Lokasi</label>
+<input id="lokasiNama" required placeholder="Contoh: Gudang Utama">
+</div>
+
+<div class="form-group">
+<label>Keterangan</label>
+<textarea id="lokasiKeterangan" placeholder="Keterangan lokasi"></textarea>
+</div>
+
+<div class="form-actions">
+<button type="button" class="btn btn-secondary" onclick="closeModal('lokasiModal')">Batal</button>
+<button type="submit" class="btn btn-primary">Simpan</button>
+</div>
+
+</form>
+</div>
+</div>
+
+
+<!-- MODAL PEMINJAMAN -->
+<div id="peminjamanModal" class="modal">
+
+<div class="modal-box">
+
+<div class="modal-header">
+<h2>Peminjaman Baru</h2>
+<button class="close" onclick="closeModal('peminjamanModal')">×</button>
+</div>
+
+<div id="peminjamanFormError" class="error"></div>
+
+<form onsubmit="savePeminjaman(event)">
+
+<div class="form-group">
+<label>Nama Peminjam</label>
+<input id="peminjamNama" required>
+</div>
+
+<div class="form-group">
+<label>No. HP</label>
+<input id="peminjamHp">
+</div>
+
+<div class="form-group">
+<label>Keperluan</label>
+<textarea id="peminjamKeperluan" required></textarea>
+</div>
+
+<div class="form-group">
+<label>Tanggal Pinjam</label>
+<input id="tanggalPinjam" type="date" required>
+</div>
+
+<div class="form-group">
+<label>Tanggal Rencana Kembali</label>
+<input id="tanggalKembali" type="date" required>
+</div>
+
+<div class="form-group">
+<label>Barang</label>
+<select id="pinjamBarang" required>
+<option value="">-- Pilih Barang --</option>
+</select>
+</div>
+
+<div class="form-group">
+<label>Jumlah Dipinjam</label>
+<input id="qtyPinjam" type="number" min="1" required>
+</div>
+
+<div class="form-actions">
+<button type="button" class="btn btn-secondary" onclick="closeModal('peminjamanModal')">Batal</button>
+<button type="submit" class="btn btn-primary">Simpan Peminjaman</button>
+</div>
+
+</form>
+</div>
+</div>
+
+
+<!-- MODAL DETAIL -->
+<div id="detailModal" class="modal">
+
+<div class="modal-box">
+
+<div class="modal-header">
+<h2>Detail Peminjaman</h2>
+<button class="close" onclick="closeModal('detailModal')">×</button>
+</div>
+
+<div id="detailContent"></div>
+
+<div class="form-actions">
+<button class="btn btn-secondary" onclick="closeModal('detailModal')">Tutup</button>
+</div>
+
+</div>
 </div>
 
 
 <script>
 
-/* =========================
+/* ==================================================
 SUPABASE
-========================= */
+================================================== */
 
 const SUPABASE_URL =
 "https://jasvjvvbmicywmamxeln.supabase.co";
@@ -647,58 +528,53 @@ SUPABASE_KEY
 );
 
 
-/* =========================
+/* ==================================================
 DATA
-========================= */
+================================================== */
 
 let barangData=[];
 let lokasiData=[];
+let peminjamanData=[];
 
 
-/* =========================
+/* ==================================================
 LOGIN
-========================= */
+================================================== */
 
-async function login(event){
+async function login(e){
 
-event.preventDefault();
+e.preventDefault();
 
-const email =
+const email=
 document.getElementById("email").value.trim();
 
-const password =
+const password=
 document.getElementById("password").value;
 
-const error =
-document.getElementById("loginError");
-
-const button =
+const button=
 document.getElementById("loginButton");
+
+const error=
+document.getElementById("loginError");
 
 error.style.display="none";
 
 button.disabled=true;
 button.textContent="MEMPROSES...";
 
-
-const {data,error:loginError} =
+const {data,error:err}=
 await db.auth.signInWithPassword({
-
-email:email,
-password:password
-
+email,
+password
 });
-
 
 button.disabled=false;
 button.textContent="MASUK";
 
+if(err){
 
-if(loginError){
-
-error.textContent =
-"Login gagal: "+
-loginError.message;
+error.textContent=
+"Login gagal: "+err.message;
 
 error.style.display="block";
 
@@ -706,19 +582,18 @@ return;
 
 }
 
-
 showApp(data.user);
 
 }
 
 
-/* =========================
-CHECK SESSION
-========================= */
+/* ==================================================
+SESSION
+================================================== */
 
 async function checkSession(){
 
-const {data} =
+const {data}=
 await db.auth.getSession();
 
 if(data.session){
@@ -734,44 +609,26 @@ showLogin();
 }
 
 
-/* =========================
-SHOW LOGIN
-========================= */
-
 function showLogin(){
 
-document.getElementById("loginPage")
-.style.display="flex";
-
-document.getElementById("app")
-.style.display="none";
+document.getElementById("loginPage").style.display="flex";
+document.getElementById("app").style.display="none";
 
 }
 
-
-/* =========================
-SHOW APP
-========================= */
 
 async function showApp(user){
 
-document.getElementById("loginPage")
-.style.display="none";
+document.getElementById("loginPage").style.display="none";
+document.getElementById("app").style.display="block";
 
-document.getElementById("app")
-.style.display="block";
+document.getElementById("userEmail").textContent=
+user.email || "";
 
-document.getElementById("userEmail")
-.textContent=user.email || "";
-
-await loadData();
+await loadAll();
 
 }
 
-
-/* =========================
-LOGOUT
-========================= */
 
 async function logout(){
 
@@ -782,42 +639,234 @@ showLogin();
 }
 
 
-/* =========================
-LOAD DATA
-========================= */
+/* ==================================================
+LOAD ALL
+================================================== */
 
-async function loadData(){
+async function loadAll(){
 
 await loadLokasi();
-
 await loadBarang();
+await loadPeminjaman();
 
 updateDashboard();
 
 }
 
 
-/* =========================
-LOAD LOKASI
-========================= */
+/* ==================================================
+BARANG
+================================================== */
+
+async function loadBarang(){
+
+const {data,error}=
+await db
+.from("barang")
+.select("id,kode,nama,stok,lokasi_id")
+.order("id");
+
+if(error){
+
+console.error(error);
+
+showError("barangError",error.message);
+
+return;
+
+}
+
+barangData=data || [];
+
+renderBarang();
+renderDashboard();
+fillBarangSelect();
+updateDashboard();
+
+}
+
+
+function renderBarang(){
+
+const body=
+document.getElementById("barangBody");
+
+const search=
+(
+document.getElementById("searchBarang")?.value || ""
+).toLowerCase();
+
+const filtered=
+barangData.filter(x=>
+String(x.kode||"").toLowerCase().includes(search) ||
+String(x.nama||"").toLowerCase().includes(search)
+);
+
+if(filtered.length===0){
+
+body.innerHTML=`
+<tr>
+<td colspan="5" class="empty">
+Belum ada barang
+</td>
+</tr>`;
+
+return;
+
+}
+
+body.innerHTML=
+filtered.map(x=>`
+
+<tr>
+
+<td><b>${esc(x.kode)}</b></td>
+
+<td>${esc(x.nama)}</td>
+
+<td>
+<span class="badge ${
+Number(x.stok)<=10
+?"red"
+:Number(x.stok)<=50
+?"orange"
+:"green"
+}">
+${format(x.stok)}
+</span>
+</td>
+
+<td>${getLokasi(x.lokasi_id)}</td>
+
+<td>
+<button
+class="btn btn-warning btn-small"
+onclick="editBarang('${x.id}')">
+Edit
+</button>
+</td>
+
+</tr>
+
+`).join("");
+
+}
+
+
+function openBarangModal(){
+
+document.getElementById("barangModalTitle")
+.textContent="Tambah Barang";
+
+document.getElementById("barangId").value="";
+document.getElementById("barangKode").value="";
+document.getElementById("barangNama").value="";
+document.getElementById("barangStok").value="";
+document.getElementById("barangLokasi").value="";
+
+fillLokasiSelect();
+
+hideError("barangFormError");
+
+openModal("barangModal");
+
+}
+
+
+function editBarang(id){
+
+const x=
+barangData.find(a=>String(a.id)===String(id));
+
+if(!x)return;
+
+document.getElementById("barangModalTitle")
+.textContent="Edit Barang";
+
+document.getElementById("barangId").value=x.id;
+document.getElementById("barangKode").value=x.kode || "";
+document.getElementById("barangNama").value=x.nama || "";
+document.getElementById("barangStok").value=x.stok ?? "";
+
+fillLokasiSelect();
+
+document.getElementById("barangLokasi").value=
+x.lokasi_id || "";
+
+hideError("barangFormError");
+
+openModal("barangModal");
+
+}
+
+
+async function saveBarang(e){
+
+e.preventDefault();
+
+const id=
+document.getElementById("barangId").value;
+
+const payload={
+
+kode:document.getElementById("barangKode").value.trim(),
+
+nama:document.getElementById("barangNama").value.trim(),
+
+stok:Number(document.getElementById("barangStok").value),
+
+lokasi_id:
+document.getElementById("barangLokasi").value || null
+
+};
+
+let result;
+
+if(id){
+
+result=await db
+.from("barang")
+.update(payload)
+.eq("id",id);
+
+}else{
+
+result=await db
+.from("barang")
+.insert(payload);
+
+}
+
+if(result.error){
+
+showError("barangFormError",result.error.message);
+
+return;
+
+}
+
+closeModal("barangModal");
+
+await loadBarang();
+
+}
+
+
+/* ==================================================
+LOKASI
+================================================== */
 
 async function loadLokasi(){
 
-const {data,error} =
+const {data,error}=
 await db
 .from("lokasi")
 .select("id,nama,keterangan")
 .order("id");
 
-
 if(error){
 
-console.error("LOKASI:",error);
-
-showError(
-"lokasiError",
-error.message
-);
+showError("lokasiError",error.message);
 
 return;
 
@@ -827,33 +876,401 @@ lokasiData=data || [];
 
 renderLokasi();
 
+fillLokasiSelect();
+
 }
 
 
-/* =========================
-LOAD BARANG
-========================= */
+function renderLokasi(){
 
-async function loadBarang(){
+const body=
+document.getElementById("lokasiBody");
 
-const {data,error} =
+if(!lokasiData.length){
+
+body.innerHTML=`
+<tr>
+<td colspan="4" class="empty">
+Belum ada lokasi
+</td>
+</tr>`;
+
+return;
+
+}
+
+body.innerHTML=
+lokasiData.map(x=>`
+
+<tr>
+
+<td>${esc(x.id)}</td>
+
+<td><b>${esc(x.nama)}</b></td>
+
+<td>${esc(x.keterangan||"-")}</td>
+
+<td>
+
+<button
+class="btn btn-warning btn-small"
+onclick="editLokasi('${x.id}')">
+Edit
+</button>
+
+</td>
+
+</tr>
+
+`).join("");
+
+}
+
+
+function fillLokasiSelect(){
+
+const select=
+document.getElementById("barangLokasi");
+
+if(!select)return;
+
+const current=select.value;
+
+select.innerHTML=
+`<option value="">-- Pilih Lokasi --</option>`+
+lokasiData.map(x=>
+`<option value="${escAttr(x.id)}">
+${esc(x.nama)}
+</option>`
+).join("");
+
+select.value=current;
+
+}
+
+
+function openLokasiModal(){
+
+document.getElementById("lokasiModalTitle")
+.textContent="Tambah Lokasi";
+
+document.getElementById("lokasiId").value="";
+document.getElementById("lokasiNama").value="";
+document.getElementById("lokasiKeterangan").value="";
+
+hideError("lokasiFormError");
+
+openModal("lokasiModal");
+
+}
+
+
+function editLokasi(id){
+
+const x=
+lokasiData.find(a=>String(a.id)===String(id));
+
+if(!x)return;
+
+document.getElementById("lokasiModalTitle")
+.textContent="Edit Lokasi";
+
+document.getElementById("lokasiId").value=x.id;
+document.getElementById("lokasiNama").value=x.nama || "";
+document.getElementById("lokasiKeterangan").value=
+x.keterangan || "";
+
+hideError("lokasiFormError");
+
+openModal("lokasiModal");
+
+}
+
+
+async function saveLokasi(e){
+
+e.preventDefault();
+
+const id=
+document.getElementById("lokasiId").value;
+
+const payload={
+
+nama:
+document.getElementById("lokasiNama").value.trim(),
+
+keterangan:
+document.getElementById("lokasiKeterangan").value.trim()
+
+};
+
+let result;
+
+if(id){
+
+result=await db
+.from("lokasi")
+.update(payload)
+.eq("id",id);
+
+}else{
+
+result=await db
+.from("lokasi")
+.insert(payload);
+
+}
+
+if(result.error){
+
+showError("lokasiFormError",result.error.message);
+
+return;
+
+}
+
+closeModal("lokasiModal");
+
+await loadLokasi();
+await loadBarang();
+
+}
+
+
+/* ==================================================
+PEMINJAMAN
+================================================== */
+
+async function loadPeminjaman(){
+
+const {data,error}=
 await db
-.from("barang")
-.select("id,kode,nama,stok,lokasi_id")
-.order("id");
+.from("peminjaman")
+.select("*")
+.order("id",{ascending:false});
+
+if(error){
+
+showError("peminjamanError",error.message);
+
+return;
+
+}
+
+peminjamanData=data || [];
+
+renderPeminjaman();
+renderPengembalian();
+renderRiwayat();
+updateDashboard();
+
+}
+
+
+function renderPeminjaman(){
+
+const body=
+document.getElementById("peminjamanBody");
+
+if(!peminjamanData.length){
+
+body.innerHTML=`
+<tr>
+<td colspan="8" class="empty">
+Belum ada peminjaman
+</td>
+</tr>`;
+
+return;
+
+}
+
+body.innerHTML=
+peminjamanData.map(x=>`
+
+<tr>
+
+<td>${esc(x.id)}</td>
+
+<td>${esc(x.peminjam)}</td>
+
+<td>${esc(x.no_hp||"-")}</td>
+
+<td>${esc(x.keperluan||"-")}</td>
+
+<td>${formatDate(x.tanggal_pinjam)}</td>
+
+<td>${formatDate(x.tanggal_rencana_kembali)}</td>
+
+<td>
+<span class="status">
+${esc(x.status||"-")}
+</span>
+</td>
+
+<td>
+<button
+class="btn btn-small btn-secondary"
+onclick="showDetail('${x.id}')">
+Detail
+</button>
+</td>
+
+</tr>
+
+`).join("");
+
+}
+
+
+function openPeminjamanModal(){
+
+document.getElementById("peminjamNama").value="";
+document.getElementById("peminjamHp").value="";
+document.getElementById("peminjamKeperluan").value="";
+document.getElementById("tanggalPinjam").value=
+today();
+
+document.getElementById("tanggalKembali").value="";
+
+document.getElementById("qtyPinjam").value="";
+
+fillBarangSelect();
+
+hideError("peminjamanFormError");
+
+openModal("peminjamanModal");
+
+}
+
+
+function fillBarangSelect(){
+
+const select=
+document.getElementById("pinjamBarang");
+
+if(!select)return;
+
+select.innerHTML=
+`<option value="">-- Pilih Barang --</option>`+
+barangData.map(x=>
+`<option value="${escAttr(x.id)}">
+${esc(x.kode)} - ${esc(x.nama)}
+(Stok: ${format(x.stok)})
+</option>`
+).join("");
+
+}
+
+
+async function savePeminjaman(e){
+
+e.preventDefault();
+
+const peminjam=
+document.getElementById("peminjamNama")
+.value.trim();
+
+const noHp=
+document.getElementById("peminjamHp")
+.value.trim();
+
+const keperluan=
+document.getElementById("peminjamKeperluan")
+.value.trim();
+
+const tanggalPinjam=
+document.getElementById("tanggalPinjam")
+.value;
+
+const tanggalKembali=
+document.getElementById("tanggalKembali")
+.value;
+
+const barangId=
+document.getElementById("pinjamBarang")
+.value;
+
+const qty=
+Number(document.getElementById("qtyPinjam").value);
+
+
+if(!barangId || qty<=0){
+
+showError(
+"peminjamanFormError",
+"Barang dan jumlah wajib diisi."
+);
+
+return;
+
+}
+
+
+const barang=
+barangData.find(
+x=>String(x.id)===String(barangId)
+);
+
+
+if(!barang){
+
+showError(
+"peminjamanFormError",
+"Barang tidak ditemukan."
+);
+
+return;
+
+}
+
+
+if(qty>Number(barang.stok)){
+
+showError(
+"peminjamanFormError",
+"Jumlah pinjam melebihi stok tersedia."
+);
+
+return;
+
+}
+
+
+/*
+  V4 BELUM MENGUBAH STOK.
+  Kita hanya mencatat transaksi.
+*/
+
+const payload={
+
+peminjam:peminjam,
+
+no_hp:noHp,
+
+keperluan:keperluan,
+
+tanggal_pinjam:tanggalPinjam,
+
+tanggal_rencana_kembali:tanggalKembali,
+
+status:"dipinjam"
+
+};
+
+
+const {data,error}=
+await db
+.from("peminjaman")
+.insert(payload)
+.select("id")
+.single();
 
 
 if(error){
 
-console.error("BARANG:",error);
-
 showError(
-"barangError",
-error.message
-);
-
-showError(
-"dashboardError",
+"peminjamanFormError",
 error.message
 );
 
@@ -861,173 +1278,350 @@ return;
 
 }
 
-barangData=data || [];
 
-renderBarang();
+const detail={
+
+peminjaman_id:data.id,
+
+barang_id:barangId,
+
+qty_pinjam:qty,
+
+qty_kembali:0,
+
+qty_hilang:0,
+
+qty_rusak:0
+
+};
+
+
+const detailResult=
+await db
+.from("peminjaman_detail")
+.insert(detail);
+
+
+if(detailResult.error){
+
+showError(
+"peminjamanFormError",
+"Data peminjaman tersimpan, tetapi detail barang gagal disimpan: "+
+detailResult.error.message
+);
+
+return;
+
+}
+
+
+closeModal("peminjamanModal");
+
+await loadPeminjaman();
+
+}
+
+
+function renderPengembalian(){
+
+const body=
+document.getElementById("pengembalianBody");
+
+const aktif=
+peminjamanData.filter(x=>
+String(x.status).toLowerCase()!=="selesai"
+);
+
+if(!aktif.length){
+
+body.innerHTML=`
+<tr>
+<td colspan="7" class="empty">
+Tidak ada peminjaman aktif
+</td>
+</tr>`;
+
+return;
+
+}
+
+body.innerHTML=
+aktif.map(x=>`
+
+<tr>
+
+<td>${esc(x.id)}</td>
+
+<td>${esc(x.peminjam)}</td>
+
+<td>${esc(x.keperluan||"-")}</td>
+
+<td>${formatDate(x.tanggal_pinjam)}</td>
+
+<td>${formatDate(x.tanggal_rencana_kembali)}</td>
+
+<td>${esc(x.status||"-")}</td>
+
+<td>
+
+<button
+class="btn btn-primary btn-small"
+onclick="showDetail('${x.id}')">
+Proses
+</button>
+
+</td>
+
+</tr>
+
+`).join("");
+
+}
+
+
+function renderRiwayat(){
+
+const body=
+document.getElementById("riwayatBody");
+
+if(!peminjamanData.length){
+
+body.innerHTML=`
+<tr>
+<td colspan="6" class="empty">
+Belum ada riwayat
+</td>
+</tr>`;
+
+return;
+
+}
+
+body.innerHTML=
+peminjamanData.map(x=>`
+
+<tr>
+
+<td>${esc(x.id)}</td>
+
+<td>${esc(x.peminjam)}</td>
+
+<td>${esc(x.keperluan||"-")}</td>
+
+<td>${formatDate(x.tanggal_pinjam)}</td>
+
+<td>${esc(x.status||"-")}</td>
+
+<td>
+
+<button
+class="btn btn-small btn-secondary"
+onclick="showDetail('${x.id}')">
+Detail
+</button>
+
+</td>
+
+</tr>
+
+`).join("");
+
+}
+
+
+/* ==================================================
+DETAIL PEMINJAMAN
+================================================== */
+
+async function showDetail(id){
+
+const peminjaman=
+peminjamanData.find(
+x=>String(x.id)===String(id)
+);
+
+if(!peminjaman)return;
+
+
+const {data:details,error}=
+await db
+.from("peminjaman_detail")
+.select("*")
+.eq("peminjaman_id",id);
+
+
+if(error){
+
+alert("Gagal mengambil detail: "+error.message);
+
+return;
+
+}
+
+
+let barangHtml="";
+
+for(const d of (details||[])){
+
+const b=
+barangData.find(
+x=>String(x.id)===String(d.barang_id)
+);
+
+barangHtml+=`
+
+<div class="detail-box">
+
+<strong>
+${esc(b?.nama || "Barang")}
+</strong>
+
+Kode:
+${esc(b?.kode || "-")}
+<br>
+
+Qty pinjam:
+${format(d.qty_pinjam)}
+<br>
+
+Qty kembali:
+${format(d.qty_kembali)}
+<br>
+
+Qty hilang:
+${format(d.qty_hilang)}
+<br>
+
+Qty rusak:
+${format(d.qty_rusak)}
+
+</div>
+
+`;
+
+}
+
+
+document.getElementById("detailContent")
+.innerHTML=`
+
+<div class="detail-box">
+
+<strong>Peminjam</strong>
+${esc(peminjaman.peminjam)}
+
+</div>
+
+<div class="detail-box">
+
+<strong>No. HP</strong>
+${esc(peminjaman.no_hp||"-")}
+
+</div>
+
+<div class="detail-box">
+
+<strong>Keperluan</strong>
+${esc(peminjaman.keperluan||"-")}
+
+</div>
+
+<div class="detail-box">
+
+<strong>Tanggal Pinjam</strong>
+${formatDate(peminjaman.tanggal_pinjam)}
+
+</div>
+
+<div class="detail-box">
+
+<strong>Rencana Kembali</strong>
+${formatDate(peminjaman.tanggal_rencana_kembali)}
+
+</div>
+
+<div class="detail-box">
+
+<strong>Status</strong>
+${esc(peminjaman.status||"-")}
+
+</div>
+
+<h3>Barang</h3>
+
+${barangHtml || '<div class="empty">Tidak ada detail barang</div>'}
+
+`;
+
+openModal("detailModal");
+
+}
+
+
+/* ==================================================
+DASHBOARD
+================================================== */
+
+function updateDashboard(){
+
+document.getElementById("totalJenis")
+.textContent=format(barangData.length);
+
+const total=
+barangData.reduce(
+(a,x)=>a+Number(x.stok||0),
+0
+);
+
+document.getElementById("totalStok")
+.textContent=format(total);
+
+document.getElementById("totalLokasi")
+.textContent=format(lokasiData.length);
+
+const aktif=
+peminjamanData.filter(x=>
+String(x.status).toLowerCase()!=="selesai"
+).length;
+
+document.getElementById("totalPinjam")
+.textContent=format(aktif);
 
 renderDashboard();
 
 }
 
 
-/* =========================
-RENDER BARANG
-========================= */
-
-function renderBarang(){
-
-const body =
-document.getElementById(
-"barangBody"
-);
-
-const search =
-(
-document.getElementById(
-"searchBarang"
-).value || ""
-).toLowerCase();
-
-
-const data =
-barangData.filter(item =>
-
-String(item.kode || "")
-.toLowerCase()
-.includes(search)
-
-||
-
-String(item.nama || "")
-.toLowerCase()
-.includes(search)
-
-);
-
-
-if(data.length===0){
-
-body.innerHTML=`
-
-<tr>
-
-<td
-colspan="4"
-class="empty">
-
-Belum ada barang
-
-</td>
-
-</tr>
-
-`;
-
-return;
-
-}
-
-
-body.innerHTML =
-data.map(item=>`
-
-<tr>
-
-<td>
-<b>
-${esc(item.kode)}
-</b>
-</td>
-
-<td>
-${esc(item.nama)}
-</td>
-
-<td>
-
-<span class="badge ${
-Number(item.stok)<=10
-?"red"
-:
-Number(item.stok)<=50
-?"orange"
-:"green"
-}">
-
-${format(item.stok)}
-
-</span>
-
-</td>
-
-<td>
-
-${getLokasi(item.lokasi_id)}
-
-</td>
-
-</tr>
-
-`).join("");
-
-}
-
-
-/* =========================
-RENDER DASHBOARD
-========================= */
-
 function renderDashboard(){
 
-const body =
-document.getElementById(
-"dashboardBody"
-);
+const body=
+document.getElementById("dashboardBody");
 
-
-if(barangData.length===0){
+if(!barangData.length){
 
 body.innerHTML=`
-
 <tr>
-
-<td
-colspan="4"
-class="empty">
-
+<td colspan="4" class="empty">
 Belum ada barang
-
 </td>
-
-</tr>
-
-`;
+</tr>`;
 
 return;
 
 }
 
-
-body.innerHTML =
-barangData.map(item=>`
+body.innerHTML=
+barangData.map(x=>`
 
 <tr>
 
-<td>
-${esc(item.kode)}
-</td>
+<td>${esc(x.kode)}</td>
 
-<td>
-${esc(item.nama)}
-</td>
+<td>${esc(x.nama)}</td>
 
-<td>
-${format(item.stok)}
-</td>
+<td>${format(x.stok)}</td>
 
-<td>
-${getLokasi(item.lokasi_id)}
-</td>
+<td>${getLokasi(x.lokasi_id)}</td>
 
 </tr>
 
@@ -1036,186 +1630,117 @@ ${getLokasi(item.lokasi_id)}
 }
 
 
-/* =========================
-RENDER LOKASI
-========================= */
-
-function renderLokasi(){
-
-const body =
-document.getElementById(
-"lokasiBody"
-);
-
-
-if(lokasiData.length===0){
-
-body.innerHTML=`
-
-<tr>
-
-<td
-colspan="2"
-class="empty">
-
-Belum ada lokasi
-
-</td>
-
-</tr>
-
-`;
-
-return;
-
-}
-
-
-body.innerHTML =
-lokasiData.map(item=>`
-
-<tr>
-
-<td>
-<b>
-${esc(item.nama)}
-</b>
-</td>
-
-<td>
-${esc(item.keterangan || "-")}
-</td>
-
-</tr>
-
-`).join("");
-
-}
-
-
-/* =========================
-GET LOKASI
-========================= */
-
-function getLokasi(id){
-
-const lokasi =
-lokasiData.find(
-item => String(item.id)===String(id)
-);
-
-return lokasi
-? esc(lokasi.nama)
-: "-";
-
-}
-
-
-/* =========================
-DASHBOARD ANGKA
-========================= */
-
-function updateDashboard(){
-
-document.getElementById(
-"totalJenis"
-).textContent =
-format(barangData.length);
-
-
-const total =
-barangData.reduce(
-(sum,item)=>
-sum+Number(item.stok||0),
-0
-);
-
-
-document.getElementById(
-"totalStok"
-).textContent =
-format(total);
-
-
-document.getElementById(
-"totalLokasi"
-).textContent =
-format(lokasiData.length);
-
-}
-
-
-/* =========================
-NAVIGASI
-========================= */
+/* ==================================================
+NAVIGATION
+================================================== */
 
 function showPage(page,button){
 
 document
 .querySelectorAll(".page")
-.forEach(x=>
-x.classList.remove("active")
-);
-
+.forEach(x=>x.classList.remove("active"));
 
 document
 .getElementById(page)
 .classList.add("active");
 
-
 document
 .querySelectorAll("nav button")
-.forEach(x=>
-x.classList.remove("active")
-);
-
+.forEach(x=>x.classList.remove("active"));
 
 button.classList.add("active");
 
 }
 
 
-/* =========================
-ERROR
-========================= */
+/* ==================================================
+MODAL
+================================================== */
 
-function showError(id,message){
+function openModal(id){
 
-const box =
-document.getElementById(id);
-
-if(!box)return;
-
-box.textContent=
-"Database: "+message;
-
-box.style.display="block";
+document.getElementById(id).style.display="block";
 
 }
 
 
-/* =========================
-FORMAT
-========================= */
+function closeModal(id){
 
-function format(number){
-
-return Number(number||0)
-.toLocaleString("id-ID");
+document.getElementById(id).style.display="none";
 
 }
 
 
-function esc(value){
+window.onclick=function(e){
 
-if(value===null||
-value===undefined){
+if(e.target.classList.contains("modal")){
 
-return "";
+e.target.style.display="none";
 
 }
 
-return String(value)
+}
+
+
+/* ==================================================
+HELPERS
+================================================== */
+
+function getLokasi(id){
+
+const x=
+lokasiData.find(
+a=>String(a.id)===String(id)
+);
+
+return x ? esc(x.nama) : "-";
+
+}
+
+
+function format(n){
+
+return Number(n||0).toLocaleString("id-ID");
+
+}
+
+
+function formatDate(v){
+
+if(!v)return "-";
+
+return new Date(v).toLocaleDateString(
+"id-ID",
+{
+day:"2-digit",
+month:"2-digit",
+year:"numeric"
+}
+);
+
+}
+
+
+function today(){
+
+const d=new Date();
+
+const y=d.getFullYear();
+
+const m=String(d.getMonth()+1).padStart(2,"0");
+
+const day=String(d.getDate()).padStart(2,"0");
+
+return `${y}-${m}-${day}`;
+
+}
+
+
+function esc(v){
+
+if(v===null||v===undefined)return "";
+
+return String(v)
 .replace(/&/g,"&amp;")
 .replace(/</g,"&lt;")
 .replace(/>/g,"&gt;")
@@ -1225,9 +1750,45 @@ return String(value)
 }
 
 
-/* =========================
-AUTH LISTENER
-========================= */
+function escAttr(v){
+
+return esc(v);
+
+}
+
+
+function showError(id,message){
+
+const box=
+document.getElementById(id);
+
+if(!box)return;
+
+box.textContent=message;
+
+box.style.display="block";
+
+}
+
+
+function hideError(id){
+
+const box=
+document.getElementById(id);
+
+if(box){
+
+box.style.display="none";
+box.textContent="";
+
+}
+
+}
+
+
+/* ==================================================
+AUTH
+================================================== */
 
 db.auth.onAuthStateChange(
 (event,session)=>{
@@ -1245,9 +1806,9 @@ showLogin();
 });
 
 
-/* =========================
+/* ==================================================
 START
-========================= */
+================================================== */
 
 checkSession();
 
