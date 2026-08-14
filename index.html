@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Gudang Karang 0207</title>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
@@ -11,390 +12,385 @@
 *{box-sizing:border-box}
 
 body{
-  margin:0;
-  font-family:Arial,sans-serif;
-  background:#f3f4f6;
-  color:#111827;
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#f3f4f6;
+    color:#111827
 }
 
-button,input,select{
-  font:inherit;
+button,input{
+    font:inherit
 }
 
-.login-page{
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:20px;
-  background:#166534;
+.login{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#166534;
+    padding:20px
 }
 
 .login-box{
-  width:100%;
-  max-width:400px;
-  background:white;
-  padding:30px;
-  border-radius:18px;
-  box-shadow:0 10px 30px rgba(0,0,0,.2);
+    background:white;
+    width:100%;
+    max-width:390px;
+    padding:30px;
+    border-radius:16px;
+    box-shadow:0 10px 30px rgba(0,0,0,.2)
 }
 
-.login-logo{
-  text-align:center;
-  font-size:42px;
+.login-icon{
+    text-align:center;
+    font-size:45px
 }
 
 .login-box h1{
-  text-align:center;
-  margin:10px 0 5px;
-  font-size:24px;
+    text-align:center;
+    font-size:23px;
+    margin:10px 0 5px
 }
 
 .login-box p{
-  text-align:center;
-  color:#6b7280;
-  margin-bottom:25px;
+    text-align:center;
+    color:#6b7280;
+    margin-bottom:25px
 }
 
 .form-group{
-  margin-bottom:15px;
+    margin-bottom:15px
 }
 
-.form-group label{
-  display:block;
-  font-weight:bold;
-  font-size:14px;
-  margin-bottom:6px;
+label{
+    display:block;
+    font-weight:bold;
+    font-size:14px;
+    margin-bottom:6px
 }
 
-input,select{
-  width:100%;
-  padding:12px;
-  border:1px solid #d1d5db;
-  border-radius:8px;
-  outline:none;
-}
-
-input:focus,select:focus{
-  border-color:#166534;
+input{
+    width:100%;
+    padding:12px;
+    border:1px solid #d1d5db;
+    border-radius:8px
 }
 
 .btn{
-  border:0;
-  border-radius:8px;
-  padding:11px 15px;
-  cursor:pointer;
-  font-weight:bold;
+    border:0;
+    border-radius:8px;
+    padding:11px 15px;
+    cursor:pointer;
+    font-weight:bold
 }
 
-.btn-primary{
-  background:#166534;
-  color:white;
+.btn-green{
+    background:#166534;
+    color:white
 }
 
-.btn-danger{
-  background:#dc2626;
-  color:white;
+.btn-red{
+    background:#dc2626;
+    color:white
 }
 
-.btn-gray{
-  background:#e5e7eb;
-  color:#111827;
+.login-btn{
+    width:100%
 }
 
-.login-button{
-  width:100%;
-  margin-top:5px;
-}
-
-.error{
-  background:#fee2e2;
-  color:#991b1b;
-  padding:10px;
-  border-radius:8px;
-  margin-bottom:15px;
-  font-size:14px;
-  display:none;
+.login-error{
+    display:none;
+    background:#fee2e2;
+    color:#991b1b;
+    padding:10px;
+    border-radius:8px;
+    margin-bottom:15px;
+    font-size:13px
 }
 
 .app{
-  display:none;
+    display:none
 }
 
 header{
-  background:#166534;
-  color:white;
-  padding:16px;
+    background:#166534;
+    color:white;
+    padding:16px
 }
 
-.header-inner{
-  max-width:1100px;
-  margin:auto;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:15px;
+.header{
+    max-width:1100px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:10px
 }
 
-.logo h1{
-  margin:0;
-  font-size:21px;
+.header h1{
+    margin:0;
+    font-size:21px
 }
 
-.logo p{
-  margin:4px 0 0;
-  font-size:12px;
-  opacity:.85;
+.header p{
+    margin:4px 0 0;
+    font-size:12px;
+    opacity:.85
 }
 
-.user-area{
-  text-align:right;
-  font-size:13px;
+.user{
+    text-align:right;
+    font-size:12px
 }
 
 .container{
-  max-width:1100px;
-  margin:auto;
-  padding:20px;
+    max-width:1100px;
+    margin:auto;
+    padding:20px
 }
 
 nav{
-  display:flex;
-  gap:8px;
-  overflow-x:auto;
-  margin-bottom:20px;
+    display:flex;
+    gap:8px;
+    overflow-x:auto;
+    margin-bottom:20px
 }
 
 nav button{
-  border:0;
-  background:white;
-  padding:11px 15px;
-  border-radius:8px;
-  cursor:pointer;
-  white-space:nowrap;
-  font-weight:bold;
+    border:0;
+    background:white;
+    padding:11px 15px;
+    border-radius:8px;
+    font-weight:bold;
+    white-space:nowrap;
+    cursor:pointer
 }
 
 nav button.active{
-  background:#166534;
-  color:white;
+    background:#166534;
+    color:white
 }
 
 .page{
-  display:none;
+    display:none
 }
 
 .page.active{
-  display:block;
+    display:block
 }
 
 .cards{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-  gap:15px;
-  margin-bottom:20px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:15px;
+    margin-bottom:20px
 }
 
 .card{
-  background:white;
-  padding:20px;
-  border-radius:12px;
-  box-shadow:0 2px 8px rgba(0,0,0,.06);
+    background:white;
+    padding:20px;
+    border-radius:12px;
+    box-shadow:0 2px 8px rgba(0,0,0,.06)
 }
 
-.card-label{
-  color:#6b7280;
-  font-size:14px;
+.card-title{
+    color:#6b7280;
+    font-size:14px
 }
 
 .card-number{
-  color:#166534;
-  font-size:30px;
-  font-weight:bold;
-  margin-top:8px;
+    color:#166534;
+    font-size:30px;
+    font-weight:bold;
+    margin-top:8px
 }
 
 .box{
-  background:white;
-  padding:18px;
-  border-radius:12px;
-  margin-bottom:20px;
-  box-shadow:0 2px 8px rgba(0,0,0,.05);
+    background:white;
+    padding:18px;
+    border-radius:12px;
+    margin-bottom:20px;
+    box-shadow:0 2px 8px rgba(0,0,0,.05)
 }
 
 .box h2{
-  margin:0 0 15px;
-  font-size:18px;
+    margin:0 0 15px;
+    font-size:18px
 }
 
-.toolbar{
-  display:flex;
-  gap:10px;
-  margin-bottom:15px;
+.search{
+    margin-bottom:15px
 }
 
 .table-wrap{
-  overflow-x:auto;
+    overflow-x:auto
 }
 
 table{
-  width:100%;
-  border-collapse:collapse;
-  min-width:600px;
+    width:100%;
+    border-collapse:collapse;
+    min-width:600px
 }
 
 th,td{
-  padding:12px 9px;
-  border-bottom:1px solid #e5e7eb;
-  text-align:left;
-  font-size:14px;
+    padding:12px 9px;
+    border-bottom:1px solid #e5e7eb;
+    text-align:left;
+    font-size:14px
 }
 
 th{
-  background:#f9fafb;
+    background:#f9fafb
 }
 
 .badge{
-  display:inline-block;
-  padding:5px 9px;
-  border-radius:20px;
-  font-size:12px;
-  font-weight:bold;
+    display:inline-block;
+    padding:5px 9px;
+    border-radius:20px;
+    font-size:12px;
+    font-weight:bold
 }
 
 .green{
-  background:#dcfce7;
-  color:#166534;
+    background:#dcfce7;
+    color:#166534
 }
 
 .orange{
-  background:#ffedd5;
-  color:#9a3412;
+    background:#ffedd5;
+    color:#9a3412
 }
 
 .red{
-  background:#fee2e2;
-  color:#991b1b;
+    background:#fee2e2;
+    color:#991b1b
 }
 
 .empty{
-  text-align:center;
-  padding:25px;
-  color:#6b7280;
+    text-align:center;
+    padding:30px;
+    color:#6b7280
 }
 
-.loading{
-  text-align:center;
-  padding:25px;
-  color:#6b7280;
-}
-
-.message{
-  display:none;
-  padding:10px;
-  border-radius:8px;
-  margin-bottom:15px;
-  background:#fee2e2;
-  color:#991b1b;
+.error{
+    background:#fee2e2;
+    color:#991b1b;
+    padding:12px;
+    border-radius:8px;
+    margin-bottom:15px;
+    display:none
 }
 
 @media(max-width:600px){
-  .container{
-    padding:12px;
-  }
+    .container{
+        padding:12px
+    }
 
-  .header-inner{
-    align-items:flex-start;
-  }
+    .header{
+        align-items:flex-start
+    }
 
-  .user-area{
-    font-size:11px;
-  }
+    .user{
+        font-size:10px
+    }
 
-  .user-area button{
-    padding:7px 9px;
-    font-size:11px;
-  }
+    .user button{
+        font-size:11px;
+        padding:7px 9px
+    }
 }
 </style>
 </head>
 
 <body>
 
-<!-- ================= LOGIN ================= -->
+<!-- LOGIN -->
 
-<div id="loginPage" class="login-page">
+<div id="loginPage" class="login">
 
-  <div class="login-box">
+<div class="login-box">
 
-    <div class="login-logo">📦</div>
+<div class="login-icon">📦</div>
 
-    <h1>Gudang Karang 0207</h1>
+<h1>Gudang Karang 0207</h1>
 
-    <p>Login Admin Gudang</p>
+<p>Login Admin Gudang</p>
 
-    <div id="loginError" class="error"></div>
+<div id="loginError" class="login-error"></div>
 
-    <form onsubmit="login(event)">
+<form onsubmit="login(event)">
 
-      <div class="form-group">
-        <label>Email</label>
-        <input
-          id="email"
-          type="email"
-          placeholder="Email admin"
-          required
-        >
-      </div>
+<div class="form-group">
 
-      <div class="form-group">
-        <label>Password</label>
-        <input
-          id="password"
-          type="password"
-          placeholder="Password"
-          required
-        >
-      </div>
+<label>Email</label>
 
-      <button
-        type="submit"
-        class="btn btn-primary login-button"
-        id="loginButton">
-        Masuk
-      </button>
+<input
+id="email"
+type="email"
+placeholder="Email admin"
+required>
 
-    </form>
+</div>
 
-  </div>
+<div class="form-group">
+
+<label>Password</label>
+
+<input
+id="password"
+type="password"
+placeholder="Password"
+required>
+
+</div>
+
+<button
+id="loginButton"
+class="btn btn-green login-btn">
+
+MASUK
+
+</button>
+
+</form>
+
+</div>
 
 </div>
 
 
-<!-- ================= APLIKASI ================= -->
+<!-- APP -->
 
 <div id="app" class="app">
 
 <header>
 
-  <div class="header-inner">
+<div class="header">
 
-    <div class="logo">
-      <h1>📦 Gudang Karang 0207</h1>
-      <p>Sistem Inventaris & Peminjaman Barang</p>
-    </div>
+<div>
 
-    <div class="user-area">
-      <div id="userEmail"></div>
-      <br>
-      <button
-        class="btn btn-danger"
-        onclick="logout()">
-        Keluar
-      </button>
-    </div>
+<h1>📦 Gudang Karang 0207</h1>
 
-  </div>
+<p>Sistem Inventaris & Peminjaman Barang</p>
+
+</div>
+
+<div class="user">
+
+<div id="userEmail"></div>
+
+<br>
+
+<button
+class="btn btn-red"
+onclick="logout()">
+
+Keluar
+
+</button>
+
+</div>
+
+</div>
 
 </header>
 
@@ -403,181 +399,229 @@ th{
 
 <nav>
 
-  <button
-    class="active"
-    onclick="showPage('dashboard',this)">
-    🏠 Dashboard
-  </button>
+<button
+class="active"
+onclick="showPage('dashboard',this)">
 
-  <button
-    onclick="showPage('barang',this)">
-    📦 Barang
-  </button>
+🏠 Dashboard
 
-  <button
-    onclick="showPage('lokasi',this)">
-    📍 Lokasi
-  </button>
+</button>
+
+<button
+onclick="showPage('barang',this)">
+
+📦 Barang
+
+</button>
+
+<button
+onclick="showPage('lokasi',this)">
+
+📍 Lokasi
+
+</button>
 
 </nav>
 
 
-<!-- ================= DASHBOARD ================= -->
+<!-- DASHBOARD -->
 
-<section id="dashboard" class="page active">
+<section
+id="dashboard"
+class="page active">
 
-  <div class="cards">
+<div class="cards">
 
-    <div class="card">
-      <div class="card-label">
-        Jenis Barang
-      </div>
+<div class="card">
 
-      <div
-        id="totalJenis"
-        class="card-number">
-        -
-      </div>
-    </div>
+<div class="card-title">
+Jenis Barang
+</div>
 
+<div
+id="totalJenis"
+class="card-number">
 
-    <div class="card">
-      <div class="card-label">
-        Total Stok
-      </div>
+0
 
-      <div
-        id="totalStok"
-        class="card-number">
-        -
-      </div>
-    </div>
+</div>
+
+</div>
 
 
-    <div class="card">
-      <div class="card-label">
-        Lokasi
-      </div>
+<div class="card">
 
-      <div
-        id="totalLokasi"
-        class="card-number">
-        -
-      </div>
-    </div>
+<div class="card-title">
+Total Stok
+</div>
 
-  </div>
+<div
+id="totalStok"
+class="card-number">
 
+0
 
-  <div class="box">
+</div>
 
-    <h2>📦 Stok Barang</h2>
-
-    <div id="dashboardLoading" class="loading">
-      Memuat data...
-    </div>
-
-    <div class="table-wrap">
-
-      <table id="dashboardTable" style="display:none">
-
-        <thead>
-          <tr>
-            <th>Kode</th>
-            <th>Nama Barang</th>
-            <th>Stok</th>
-            <th>Lokasi</th>
-          </tr>
-        </thead>
-
-        <tbody id="dashboardBody"></tbody>
-
-      </table>
-
-    </div>
-
-  </div>
-
-</section>
+</div>
 
 
-<!-- ================= BARANG ================= -->
+<div class="card">
 
-<section id="barang" class="page">
+<div class="card-title">
+Lokasi
+</div>
 
-  <div class="box">
+<div
+id="totalLokasi"
+class="card-number">
 
-    <h2>📦 Data Barang</h2>
+0
 
-    <div id="barangError" class="message"></div>
+</div>
 
-    <div class="toolbar">
+</div>
 
-      <input
-        id="searchBarang"
-        placeholder="Cari kode atau nama barang..."
-        oninput="renderBarang()"
-      >
+</div>
 
-    </div>
 
-    <div class="table-wrap">
+<div class="box">
 
-      <table>
+<h2>📦 Daftar Barang</h2>
 
-        <thead>
+<div
+id="dashboardError"
+class="error">
+</div>
 
-          <tr>
-            <th>Kode</th>
-            <th>Nama Barang</th>
-            <th>Stok</th>
-            <th>Lokasi</th>
-          </tr>
+<div class="table-wrap">
 
-        </thead>
+<table>
 
-        <tbody id="barangBody"></tbody>
+<thead>
 
-      </table>
+<tr>
 
-    </div>
+<th>Kode</th>
+<th>Nama Barang</th>
+<th>Stok</th>
+<th>Lokasi</th>
 
-  </div>
+</tr>
+
+</thead>
+
+<tbody
+id="dashboardBody">
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
 
 </section>
 
 
-<!-- ================= LOKASI ================= -->
+<!-- BARANG -->
 
-<section id="lokasi" class="page">
+<section
+id="barang"
+class="page">
 
-  <div class="box">
+<div class="box">
 
-    <h2>📍 Lokasi Penyimpanan</h2>
+<h2>📦 Data Barang</h2>
 
-    <div class="table-wrap">
+<div
+id="barangError"
+class="error">
+</div>
 
-      <table>
+<div class="search">
 
-        <thead>
+<input
+id="searchBarang"
+placeholder="Cari kode atau nama barang..."
+oninput="renderBarang()">
 
-          <tr>
-            <th>Nama Lokasi</th>
-            <th>Keterangan</th>
-          </tr>
+</div>
 
-        </thead>
+<div class="table-wrap">
 
-        <tbody id="lokasiBody"></tbody>
+<table>
 
-      </table>
+<thead>
 
-    </div>
+<tr>
 
-  </div>
+<th>Kode</th>
+<th>Nama Barang</th>
+<th>Stok</th>
+<th>Lokasi</th>
+
+</tr>
+
+</thead>
+
+<tbody
+id="barangBody">
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
 
 </section>
 
+
+<!-- LOKASI -->
+
+<section
+id="lokasi"
+class="page">
+
+<div class="box">
+
+<h2>📍 Lokasi Penyimpanan</h2>
+
+<div
+id="lokasiError"
+class="error">
+</div>
+
+<div class="table-wrap">
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Nama Lokasi</th>
+<th>Keterangan</th>
+
+</tr>
+
+</thead>
+
+<tbody
+id="lokasiBody">
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</section>
 
 </div>
 
@@ -586,598 +630,624 @@ th{
 
 <script>
 
-/* =====================================================
-   SUPABASE
-===================================================== */
+/* =========================
+SUPABASE
+========================= */
 
 const SUPABASE_URL =
-  "https://jasvjvvbmicywmamxeln.supabase.co";
+"https://jasvjvvbmicywmamxeln.supabase.co";
 
 const SUPABASE_KEY =
-  "sb_publishable_-JCTciTci-hqs0PXM72MAQ_bVy7hZJs";
-
-const supabaseClient =
-  window.supabase.createClient(
-    SUPABASE_URL,
-    SUPABASE_KEY
-  );
-
-
-/* =====================================================
-   DATA
-===================================================== */
-
-let barangData = [];
-let lokasiData = [];
-
-
-/* =====================================================
-   LOGIN
-===================================================== */
-
-async function login(event){
-
-  event.preventDefault();
-
-  const email =
-    document.getElementById("email").value.trim();
-
-  const password =
-    document.getElementById("password").value;
-
-  const button =
-    document.getElementById("loginButton");
-
-  const errorBox =
-    document.getElementById("loginError");
-
-  errorBox.style.display = "none";
-
-  button.disabled = true;
-  button.textContent = "Memproses...";
-
-
-  const {data,error} =
-    await supabaseClient.auth.signInWithPassword({
-      email:email,
-      password:password
-    });
-
-
-  button.disabled = false;
-  button.textContent = "Masuk";
-
-
-  if(error){
-
-    errorBox.textContent =
-      "Login gagal: " + error.message;
-
-    errorBox.style.display = "block";
-
-    return;
-  }
-
-
-  if(data.user){
-
-    showApp(data.user);
-
-  }
-
-}
-
-
-/* =====================================================
-   CEK SESSION
-===================================================== */
-
-async function checkSession(){
-
-  const {
-    data:{
-      session
-    }
-  } =
-    await supabaseClient.auth.getSession();
-
-
-  if(session && session.user){
-
-    showApp(session.user);
-
-  }else{
-
-    showLogin();
-
-  }
-
-}
-
-
-/* =====================================================
-   TAMPILKAN LOGIN
-===================================================== */
-
-function showLogin(){
-
-  document.getElementById("loginPage")
-    .style.display = "flex";
-
-  document.getElementById("app")
-    .style.display = "none";
-
-}
-
-
-/* =====================================================
-   TAMPILKAN APLIKASI
-===================================================== */
-
-async function showApp(user){
-
-  document.getElementById("loginPage")
-    .style.display = "none";
-
-  document.getElementById("app")
-    .style.display = "block";
-
-  document.getElementById("userEmail")
-    .textContent = user.email || "";
-
-  await loadAll();
-
-}
-
-
-/* =====================================================
-   LOGOUT
-===================================================== */
-
-async function logout(){
-
-  await supabaseClient.auth.signOut();
-
-  showLogin();
-
-}
-
-
-/* =====================================================
-   NAVIGASI
-===================================================== */
-
-function showPage(page,button){
-
-  document
-    .querySelectorAll(".page")
-    .forEach(item=>{
-      item.classList.remove("active");
-    });
-
-  document
-    .getElementById(page)
-    .classList.add("active");
-
-
-  document
-    .querySelectorAll("nav button")
-    .forEach(item=>{
-      item.classList.remove("active");
-    });
-
-  button.classList.add("active");
-
-
-  if(page === "dashboard"){
-    loadDashboard();
-  }
-
-  if(page === "barang"){
-    loadBarang();
-  }
-
-  if(page === "lokasi"){
-    loadLokasi();
-  }
-
-}
-
-
-/* =====================================================
-   LOAD SEMUA
-===================================================== */
-
-async function loadAll(){
-
-  await loadLokasi();
-
-  await loadBarang();
-
-  await loadDashboard();
-
-}
-
-
-/* =====================================================
-   LOAD BARANG
-===================================================== */
-
-async function loadBarang(){
-
-  const {
-    data,
-    error
-  } =
-    await supabaseClient
-      .from("barang")
-      .select(`
-        id,
-        kode,
-        nama,
-        stok,
-        lokasi_id,
-        lokasi (
-          nama
-        )
-      `)
-      .order("id");
-
-
-  if(error){
-
-    console.error(error);
-
-    showBarangError(error.message);
-
-    return;
-
-  }
-
-
-  barangData = data || [];
-
-  renderBarang();
-
-  renderDashboardTable();
-
-}
-
-
-/* =====================================================
-   RENDER BARANG
-===================================================== */
-
-function renderBarang(){
-
-  const body =
-    document.getElementById("barangBody");
-
-  const search =
-    (
-      document.getElementById("searchBarang")
-        ?.value || ""
-    ).toLowerCase();
-
-
-  const filtered =
-    barangData.filter(item =>
-
-      String(item.kode || "")
-        .toLowerCase()
-        .includes(search)
-
-      ||
-
-      String(item.nama || "")
-        .toLowerCase()
-        .includes(search)
-
-    );
-
-
-  if(filtered.length === 0){
-
-    body.innerHTML = `
-      <tr>
-        <td colspan="4" class="empty">
-          Tidak ada barang
-        </td>
-      </tr>
-    `;
-
-    return;
-
-  }
-
-
-  body.innerHTML =
-    filtered.map(item=>`
-
-      <tr>
-
-        <td>
-          <b>${escapeHtml(item.kode)}</b>
-        </td>
-
-        <td>
-          ${escapeHtml(item.nama)}
-        </td>
-
-        <td>
-          <span class="badge ${
-            Number(item.stok) <= 10
-              ? "red"
-              : Number(item.stok) <= 50
-                ? "orange"
-                : "green"
-          }">
-            ${formatNumber(item.stok)}
-          </span>
-        </td>
-
-        <td>
-          ${escapeHtml(item.lokasi?.nama || "-")}
-        </td>
-
-      </tr>
-
-    `).join("");
-
-}
-
-
-/* =====================================================
-   LOAD LOKASI
-===================================================== */
-
-async function loadLokasi(){
-
-  const {
-    data,
-    error
-  } =
-    await supabaseClient
-      .from("lokasi")
-      .select("id,nama,keterangan")
-      .order("id");
-
-
-  if(error){
-
-    console.error(error);
-
-    return;
-
-  }
-
-
-  lokasiData = data || [];
-
-  renderLokasi();
-
-}
-
-
-/* =====================================================
-   RENDER LOKASI
-===================================================== */
-
-function renderLokasi(){
-
-  const body =
-    document.getElementById("lokasiBody");
-
-
-  if(lokasiData.length === 0){
-
-    body.innerHTML = `
-      <tr>
-        <td colspan="2" class="empty">
-          Belum ada lokasi
-        </td>
-      </tr>
-    `;
-
-    return;
-
-  }
-
-
-  body.innerHTML =
-    lokasiData.map(item=>`
-
-      <tr>
-
-        <td>
-          <b>${escapeHtml(item.nama)}</b>
-        </td>
-
-        <td>
-          ${escapeHtml(item.keterangan || "-")}
-        </td>
-
-      </tr>
-
-    `).join("");
-
-}
-
-
-/* =====================================================
-   DASHBOARD
-===================================================== */
-
-async function loadDashboard(){
-
-  document.getElementById("totalJenis")
-    .textContent =
-      formatNumber(barangData.length);
-
-
-  const totalStok =
-    barangData.reduce(
-      (total,item)=>
-        total + Number(item.stok || 0),
-      0
-    );
-
-
-  document.getElementById("totalStok")
-    .textContent =
-      formatNumber(totalStok);
-
-
-  document.getElementById("totalLokasi")
-    .textContent =
-      formatNumber(lokasiData.length);
-
-
-  renderDashboardTable();
-
-}
-
-
-/* =====================================================
-   DASHBOARD TABLE
-===================================================== */
-
-function renderDashboardTable(){
-
-  const loading =
-    document.getElementById(
-      "dashboardLoading"
-    );
-
-  const table =
-    document.getElementById(
-      "dashboardTable"
-    );
-
-  const body =
-    document.getElementById(
-      "dashboardBody"
-    );
-
-
-  if(!barangData.length){
-
-    loading.textContent =
-      "Belum ada data barang.";
-
-    return;
-
-  }
-
-
-  loading.style.display = "none";
-
-  table.style.display = "table";
-
-
-  body.innerHTML =
-    barangData.map(item=>`
-
-      <tr>
-
-        <td>
-          ${escapeHtml(item.kode)}
-        </td>
-
-        <td>
-          ${escapeHtml(item.nama)}
-        </td>
-
-        <td>
-          ${formatNumber(item.stok)}
-        </td>
-
-        <td>
-          ${escapeHtml(item.lokasi?.nama || "-")}
-        </td>
-
-      </tr>
-
-    `).join("");
-
-}
-
-
-/* =====================================================
-   ERROR
-===================================================== */
-
-function showBarangError(message){
-
-  const box =
-    document.getElementById(
-      "barangError"
-    );
-
-  box.textContent =
-    "Gagal mengambil data: " + message;
-
-  box.style.display = "block";
-
-}
-
-
-/* =====================================================
-   FORMAT
-===================================================== */
-
-function formatNumber(number){
-
-  return Number(number || 0)
-    .toLocaleString("id-ID");
-
-}
-
-
-function escapeHtml(value){
-
-  if(value === null ||
-     value === undefined){
-
-    return "";
-
-  }
-
-
-  return String(value)
-    .replace(/&/g,"&amp;")
-    .replace(/</g,"&lt;")
-    .replace(/>/g,"&gt;")
-    .replace(/"/g,"&quot;")
-    .replace(/'/g,"&#039;");
-
-}
-
-
-/* =====================================================
-   AUTH LISTENER
-===================================================== */
-
-supabaseClient.auth.onAuthStateChange(
-  (event,session)=>{
-
-    if(session && session.user){
-
-      showApp(session.user);
-
-    }else{
-
-      showLogin();
-
-    }
-
-  }
+"sb_publishable_-JCTciTci-hqs0PXM72MAQ_bVy7hZJs";
+
+const db =
+window.supabase.createClient(
+SUPABASE_URL,
+SUPABASE_KEY
 );
 
 
-/* =====================================================
-   MULAI
-===================================================== */
+/* =========================
+DATA
+========================= */
+
+let barangData=[];
+let lokasiData=[];
+
+
+/* =========================
+LOGIN
+========================= */
+
+async function login(event){
+
+event.preventDefault();
+
+const email =
+document.getElementById("email").value.trim();
+
+const password =
+document.getElementById("password").value;
+
+const error =
+document.getElementById("loginError");
+
+const button =
+document.getElementById("loginButton");
+
+error.style.display="none";
+
+button.disabled=true;
+button.textContent="MEMPROSES...";
+
+
+const {data,error:loginError} =
+await db.auth.signInWithPassword({
+
+email:email,
+password:password
+
+});
+
+
+button.disabled=false;
+button.textContent="MASUK";
+
+
+if(loginError){
+
+error.textContent =
+"Login gagal: "+
+loginError.message;
+
+error.style.display="block";
+
+return;
+
+}
+
+
+showApp(data.user);
+
+}
+
+
+/* =========================
+CHECK SESSION
+========================= */
+
+async function checkSession(){
+
+const {data} =
+await db.auth.getSession();
+
+if(data.session){
+
+showApp(data.session.user);
+
+}else{
+
+showLogin();
+
+}
+
+}
+
+
+/* =========================
+SHOW LOGIN
+========================= */
+
+function showLogin(){
+
+document.getElementById("loginPage")
+.style.display="flex";
+
+document.getElementById("app")
+.style.display="none";
+
+}
+
+
+/* =========================
+SHOW APP
+========================= */
+
+async function showApp(user){
+
+document.getElementById("loginPage")
+.style.display="none";
+
+document.getElementById("app")
+.style.display="block";
+
+document.getElementById("userEmail")
+.textContent=user.email || "";
+
+await loadData();
+
+}
+
+
+/* =========================
+LOGOUT
+========================= */
+
+async function logout(){
+
+await db.auth.signOut();
+
+showLogin();
+
+}
+
+
+/* =========================
+LOAD DATA
+========================= */
+
+async function loadData(){
+
+await loadLokasi();
+
+await loadBarang();
+
+updateDashboard();
+
+}
+
+
+/* =========================
+LOAD LOKASI
+========================= */
+
+async function loadLokasi(){
+
+const {data,error} =
+await db
+.from("lokasi")
+.select("id,nama,keterangan")
+.order("id");
+
+
+if(error){
+
+console.error("LOKASI:",error);
+
+showError(
+"lokasiError",
+error.message
+);
+
+return;
+
+}
+
+lokasiData=data || [];
+
+renderLokasi();
+
+}
+
+
+/* =========================
+LOAD BARANG
+========================= */
+
+async function loadBarang(){
+
+const {data,error} =
+await db
+.from("barang")
+.select("id,kode,nama,stok,lokasi_id")
+.order("id");
+
+
+if(error){
+
+console.error("BARANG:",error);
+
+showError(
+"barangError",
+error.message
+);
+
+showError(
+"dashboardError",
+error.message
+);
+
+return;
+
+}
+
+barangData=data || [];
+
+renderBarang();
+
+renderDashboard();
+
+}
+
+
+/* =========================
+RENDER BARANG
+========================= */
+
+function renderBarang(){
+
+const body =
+document.getElementById(
+"barangBody"
+);
+
+const search =
+(
+document.getElementById(
+"searchBarang"
+).value || ""
+).toLowerCase();
+
+
+const data =
+barangData.filter(item =>
+
+String(item.kode || "")
+.toLowerCase()
+.includes(search)
+
+||
+
+String(item.nama || "")
+.toLowerCase()
+.includes(search)
+
+);
+
+
+if(data.length===0){
+
+body.innerHTML=`
+
+<tr>
+
+<td
+colspan="4"
+class="empty">
+
+Belum ada barang
+
+</td>
+
+</tr>
+
+`;
+
+return;
+
+}
+
+
+body.innerHTML =
+data.map(item=>`
+
+<tr>
+
+<td>
+<b>
+${esc(item.kode)}
+</b>
+</td>
+
+<td>
+${esc(item.nama)}
+</td>
+
+<td>
+
+<span class="badge ${
+Number(item.stok)<=10
+?"red"
+:
+Number(item.stok)<=50
+?"orange"
+:"green"
+}">
+
+${format(item.stok)}
+
+</span>
+
+</td>
+
+<td>
+
+${getLokasi(item.lokasi_id)}
+
+</td>
+
+</tr>
+
+`).join("");
+
+}
+
+
+/* =========================
+RENDER DASHBOARD
+========================= */
+
+function renderDashboard(){
+
+const body =
+document.getElementById(
+"dashboardBody"
+);
+
+
+if(barangData.length===0){
+
+body.innerHTML=`
+
+<tr>
+
+<td
+colspan="4"
+class="empty">
+
+Belum ada barang
+
+</td>
+
+</tr>
+
+`;
+
+return;
+
+}
+
+
+body.innerHTML =
+barangData.map(item=>`
+
+<tr>
+
+<td>
+${esc(item.kode)}
+</td>
+
+<td>
+${esc(item.nama)}
+</td>
+
+<td>
+${format(item.stok)}
+</td>
+
+<td>
+${getLokasi(item.lokasi_id)}
+</td>
+
+</tr>
+
+`).join("");
+
+}
+
+
+/* =========================
+RENDER LOKASI
+========================= */
+
+function renderLokasi(){
+
+const body =
+document.getElementById(
+"lokasiBody"
+);
+
+
+if(lokasiData.length===0){
+
+body.innerHTML=`
+
+<tr>
+
+<td
+colspan="2"
+class="empty">
+
+Belum ada lokasi
+
+</td>
+
+</tr>
+
+`;
+
+return;
+
+}
+
+
+body.innerHTML =
+lokasiData.map(item=>`
+
+<tr>
+
+<td>
+<b>
+${esc(item.nama)}
+</b>
+</td>
+
+<td>
+${esc(item.keterangan || "-")}
+</td>
+
+</tr>
+
+`).join("");
+
+}
+
+
+/* =========================
+GET LOKASI
+========================= */
+
+function getLokasi(id){
+
+const lokasi =
+lokasiData.find(
+item => String(item.id)===String(id)
+);
+
+return lokasi
+? esc(lokasi.nama)
+: "-";
+
+}
+
+
+/* =========================
+DASHBOARD ANGKA
+========================= */
+
+function updateDashboard(){
+
+document.getElementById(
+"totalJenis"
+).textContent =
+format(barangData.length);
+
+
+const total =
+barangData.reduce(
+(sum,item)=>
+sum+Number(item.stok||0),
+0
+);
+
+
+document.getElementById(
+"totalStok"
+).textContent =
+format(total);
+
+
+document.getElementById(
+"totalLokasi"
+).textContent =
+format(lokasiData.length);
+
+}
+
+
+/* =========================
+NAVIGASI
+========================= */
+
+function showPage(page,button){
+
+document
+.querySelectorAll(".page")
+.forEach(x=>
+x.classList.remove("active")
+);
+
+
+document
+.getElementById(page)
+.classList.add("active");
+
+
+document
+.querySelectorAll("nav button")
+.forEach(x=>
+x.classList.remove("active")
+);
+
+
+button.classList.add("active");
+
+}
+
+
+/* =========================
+ERROR
+========================= */
+
+function showError(id,message){
+
+const box =
+document.getElementById(id);
+
+if(!box)return;
+
+box.textContent=
+"Database: "+message;
+
+box.style.display="block";
+
+}
+
+
+/* =========================
+FORMAT
+========================= */
+
+function format(number){
+
+return Number(number||0)
+.toLocaleString("id-ID");
+
+}
+
+
+function esc(value){
+
+if(value===null||
+value===undefined){
+
+return "";
+
+}
+
+return String(value)
+.replace(/&/g,"&amp;")
+.replace(/</g,"&lt;")
+.replace(/>/g,"&gt;")
+.replace(/"/g,"&quot;")
+.replace(/'/g,"&#039;");
+
+}
+
+
+/* =========================
+AUTH LISTENER
+========================= */
+
+db.auth.onAuthStateChange(
+(event,session)=>{
+
+if(session){
+
+showApp(session.user);
+
+}else{
+
+showLogin();
+
+}
+
+});
+
+
+/* =========================
+START
+========================= */
 
 checkSession();
 
