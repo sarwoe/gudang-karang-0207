@@ -11,29 +11,29 @@
 <style>
 *{box-sizing:border-box}
 body{
-margin:0;
-font-family:Arial,sans-serif;
-background:#f3f4f6;
-color:#111827
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#f3f4f6;
+  color:#111827
 }
 button,input,select,textarea{font:inherit}
 button{cursor:pointer}
 
 .login{
-min-height:100vh;
-display:flex;
-align-items:center;
-justify-content:center;
-background:#166534;
-padding:20px
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#166534;
+  padding:20px
 }
 .login-box{
-background:#fff;
-width:100%;
-max-width:400px;
-padding:30px;
-border-radius:18px;
-box-shadow:0 10px 30px #0003
+  background:#fff;
+  width:100%;
+  max-width:400px;
+  padding:30px;
+  border-radius:18px;
+  box-shadow:0 10px 30px #0003
 }
 .login-icon{text-align:center;font-size:45px}
 .login-box h1{text-align:center;font-size:24px;margin:10px 0 5px}
@@ -41,341 +41,373 @@ box-shadow:0 10px 30px #0003
 
 .form-group{margin-bottom:14px}
 label{
-display:block;
-font-weight:bold;
-font-size:14px;
-margin-bottom:6px
+  display:block;
+  font-weight:bold;
+  font-size:14px;
+  margin-bottom:6px
 }
 input,select,textarea{
-width:100%;
-padding:11px;
-border:1px solid #d1d5db;
-border-radius:8px;
-background:#fff
+  width:100%;
+  padding:11px;
+  border:1px solid #d1d5db;
+  border-radius:8px;
+  background:#fff
+}
+textarea{
+  min-height:80px;
+  resize:vertical
 }
 input:focus,select:focus,textarea:focus{
-outline:2px solid #bbf7d0;
-border-color:#166534
+  outline:2px solid #bbf7d0;
+  border-color:#166534
 }
-textarea{min-height:80px;resize:vertical}
 
 .btn{
-border:0;
-border-radius:8px;
-padding:10px 14px;
-font-weight:bold
+  border:0;
+  border-radius:8px;
+  padding:10px 14px;
+  font-weight:bold
 }
 .btn-primary{background:#166534;color:#fff}
 .btn-secondary{background:#e5e7eb;color:#111827}
 .btn-danger{background:#dc2626;color:#fff}
 .btn-warning{background:#d97706;color:#fff}
-.btn-info{background:#2563eb;color:#fff}
-.btn-small{padding:7px 10px;font-size:12px}
-.login-btn{width:100%;margin-top:5px}
+.btn-small{
+  padding:7px 10px;
+  font-size:12px
+}
+.login-btn{
+  width:100%;
+  margin-top:5px
+}
 
 .error{
-display:none;
-background:#fee2e2;
-color:#991b1b;
-padding:10px;
-border-radius:8px;
-margin-bottom:14px;
-font-size:13px
+  display:none;
+  background:#fee2e2;
+  color:#991b1b;
+  padding:10px;
+  border-radius:8px;
+  margin-bottom:14px;
+  font-size:13px
 }
 
 .success{
-display:none;
-background:#dcfce7;
-color:#166534;
-padding:10px;
-border-radius:8px;
-margin-bottom:14px;
-font-size:13px
+  display:none;
+  background:#dcfce7;
+  color:#166534;
+  padding:10px;
+  border-radius:8px;
+  margin-bottom:14px;
+  font-size:13px
 }
 
 .app{display:none}
 
 header{
-background:#166534;
-color:white;
-padding:15px
+  background:#166534;
+  color:white;
+  padding:15px
 }
 .header{
-max-width:1150px;
-margin:auto;
-display:flex;
-justify-content:space-between;
-align-items:center;
-gap:15px
+  max-width:1150px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:15px
 }
-.header h1{margin:0;font-size:21px}
-.header p{margin:4px 0 0;font-size:12px;opacity:.85}
-.user{text-align:right;font-size:12px}
+.header h1{
+  margin:0;
+  font-size:21px
+}
+.header p{
+  margin:4px 0 0;
+  font-size:12px;
+  opacity:.85
+}
+.user{
+  text-align:right;
+  font-size:12px
+}
 
 .container{
-max-width:1150px;
-margin:auto;
-padding:18px
+  max-width:1150px;
+  margin:auto;
+  padding:18px
 }
 
 nav{
-display:flex;
-gap:7px;
-overflow-x:auto;
-margin-bottom:18px
+  display:flex;
+  gap:7px;
+  overflow-x:auto;
+  margin-bottom:18px
 }
 nav button{
-border:0;
-background:white;
-padding:11px 14px;
-border-radius:8px;
-font-weight:bold;
-white-space:nowrap
+  border:0;
+  background:white;
+  padding:11px 14px;
+  border-radius:8px;
+  font-weight:bold;
+  white-space:nowrap
 }
 nav button.active{
-background:#166534;
-color:white
+  background:#166534;
+  color:white
 }
 
 .page{display:none}
 .page.active{display:block}
 
 .cards{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-gap:14px;
-margin-bottom:18px
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:14px;
+  margin-bottom:18px
 }
 .card{
-background:white;
-padding:18px;
-border-radius:12px;
-box-shadow:0 2px 7px #0000000d
+  background:white;
+  padding:18px;
+  border-radius:12px;
+  box-shadow:0 2px 7px #0000000d
 }
-.card-title{font-size:13px;color:#6b7280}
+.card-title{
+  font-size:13px;
+  color:#6b7280
+}
 .card-number{
-font-size:29px;
-font-weight:bold;
-color:#166534;
-margin-top:7px
+  font-size:29px;
+  font-weight:bold;
+  color:#166534;
+  margin-top:7px
 }
 
 .box{
-background:#fff;
-padding:18px;
-border-radius:12px;
-margin-bottom:18px;
-box-shadow:0 2px 7px #0000000d
+  background:#fff;
+  padding:18px;
+  border-radius:12px;
+  margin-bottom:18px;
+  box-shadow:0 2px 7px #0000000d
 }
 .box h2{
-margin:0 0 15px;
-font-size:18px
+  margin:0 0 15px;
+  font-size:18px
 }
 
 .toolbar{
-display:flex;
-gap:8px;
-flex-wrap:wrap;
-margin-bottom:15px
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  margin-bottom:15px
 }
-.toolbar input{max-width:350px}
+.toolbar input{
+  max-width:350px
+}
 
 .table-wrap{overflow-x:auto}
 
 table{
-width:100%;
-border-collapse:collapse;
-min-width:700px
+  width:100%;
+  border-collapse:collapse;
+  min-width:700px
 }
 th,td{
-padding:11px 9px;
-border-bottom:1px solid #e5e7eb;
-text-align:left;
-font-size:13px
+  padding:11px 9px;
+  border-bottom:1px solid #e5e7eb;
+  text-align:left;
+  font-size:13px
 }
 th{background:#f9fafb}
 
 .badge{
-display:inline-block;
-padding:5px 9px;
-border-radius:20px;
-font-size:11px;
-font-weight:bold
+  display:inline-block;
+  padding:5px 9px;
+  border-radius:20px;
+  font-size:11px;
+  font-weight:bold
 }
 .green{background:#dcfce7;color:#166534}
 .orange{background:#ffedd5;color:#9a3412}
 .red{background:#fee2e2;color:#991b1b}
 
 .empty{
-text-align:center;
-padding:28px;
-color:#6b7280
+  text-align:center;
+  padding:28px;
+  color:#6b7280
 }
 
 .modal{
-display:none;
-position:fixed;
-inset:0;
-background:#0008;
-z-index:20;
-padding:20px;
-overflow:auto
+  display:none;
+  position:fixed;
+  inset:0;
+  background:#0008;
+  z-index:20;
+  padding:20px;
+  overflow:auto
 }
 .modal-box{
-background:white;
-max-width:700px;
-margin:30px auto;
-border-radius:14px;
-padding:20px
+  background:white;
+  max-width:650px;
+  margin:30px auto;
+  border-radius:14px;
+  padding:20px
 }
 .modal-header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-margin-bottom:18px
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:18px
 }
 .modal-header h2{
-margin:0;
-font-size:19px
+  margin:0;
+  font-size:19px
 }
 .close{
-border:0;
-background:#e5e7eb;
-border-radius:50%;
-width:34px;
-height:34px;
-font-size:20px
+  border:0;
+  background:#e5e7eb;
+  border-radius:50%;
+  width:34px;
+  height:34px;
+  font-size:20px
 }
+
 .form-actions{
-display:flex;
-justify-content:flex-end;
-gap:8px;
-margin-top:18px;
-flex-wrap:wrap
+  display:flex;
+  justify-content:flex-end;
+  gap:8px;
+  margin-top:18px;
+  flex-wrap:wrap
 }
 
 .detail-box{
-background:#f9fafb;
-border-radius:9px;
-padding:12px;
-margin-bottom:12px
+  background:#f9fafb;
+  border-radius:9px;
+  padding:12px;
+  margin-bottom:12px
 }
 .detail-box strong{
-display:block;
-margin-bottom:4px
+  display:block;
+  margin-bottom:4px
 }
 
 .item-row{
-border:1px solid #d1d5db;
-border-radius:10px;
-padding:12px;
-margin-bottom:10px;
-background:#f9fafb
+  border:1px solid #d1d5db;
+  border-radius:10px;
+  padding:12px;
+  margin-bottom:10px;
+  background:#fafafa
+}
+.item-row-top{
+  display:grid;
+  grid-template-columns:1fr 110px auto;
+  gap:8px;
+  align-items:end
+}
+.item-name{
+  font-weight:bold;
+  margin-bottom:5px
+}
+.item-stock{
+  font-size:11px;
+  color:#6b7280;
+  margin-top:4px
 }
 
-.item-grid{
-display:grid;
-grid-template-columns:1fr 130px auto;
-gap:8px;
-align-items:end
-}
-
-.item-number{
-font-weight:bold;
-font-size:13px;
-color:#166534;
-margin-bottom:7px
+.borrow-summary{
+  background:#ecfdf5;
+  border:1px solid #bbf7d0;
+  border-radius:10px;
+  padding:12px;
+  margin-top:12px
 }
 
 .status{
-font-weight:bold
+  font-weight:bold
 }
 
 .download-area{
-position:absolute;
-left:-99999px;
-top:0;
-width:800px;
-background:white
+  position:absolute;
+  left:-99999px;
+  top:0;
 }
 
 .download-card{
-background:white;
-padding:35px;
-font-family:Arial,sans-serif;
-color:#111827
+  width:800px;
+  background:#fff;
+  padding:40px;
+  color:#111827;
+  font-family:Arial,sans-serif
 }
-
 .download-card h1{
-margin:0;
-font-size:26px;
-color:#166534
+  text-align:center;
+  margin:0 0 5px;
+  color:#166534
 }
-
-.download-card h2{
-margin:5px 0 25px;
-font-size:18px
+.download-card .subtitle{
+  text-align:center;
+  color:#6b7280;
+  margin-bottom:25px
 }
-
 .download-info{
-display:grid;
-grid-template-columns:180px 1fr;
-gap:8px;
-margin-bottom:20px;
-font-size:15px
+  display:grid;
+  grid-template-columns:160px 1fr;
+  gap:8px;
+  margin-bottom:25px;
+  font-size:15px
 }
-
-.download-info .label{
-font-weight:bold
-}
-
 .download-table{
-width:100%;
-border-collapse:collapse;
-margin-top:15px
+  width:100%;
+  border-collapse:collapse;
+  margin-top:15px
 }
-
 .download-table th,
 .download-table td{
-border:1px solid #d1d5db;
-padding:10px;
-font-size:14px
+  border:1px solid #d1d5db;
+  padding:12px;
+  font-size:15px
 }
-
 .download-table th{
-background:#f3f4f6
+  background:#f3f4f6
 }
-
 .download-footer{
-margin-top:30px;
-font-size:12px;
-color:#6b7280;
-text-align:center
+  margin-top:30px;
+  padding-top:15px;
+  border-top:1px solid #e5e7eb;
+  color:#6b7280;
+  text-align:center;
+  font-size:12px
 }
 
 @media(max-width:600px){
-.container{padding:11px}
-.header{align-items:flex-start}
-.header h1{font-size:17px}
-.user{font-size:10px}
-.user .btn{padding:7px 9px;font-size:11px}
-.modal{padding:10px}
-.item-grid{
-grid-template-columns:1fr
-}
+  .container{padding:11px}
+  .header{align-items:flex-start}
+  .header h1{font-size:17px}
+  .user{font-size:10px}
+  .user .btn{
+    padding:7px 9px;
+    font-size:11px
+  }
+  .modal{padding:10px}
+  .item-row-top{
+    grid-template-columns:1fr 90px auto
+  }
 }
 </style>
 </head>
 
 <body>
 
-<!-- LOGIN -->
+<!-- =====================================================
+LOGIN
+===================================================== -->
+
 <div id="loginPage" class="login">
+
 <div class="login-box">
 
 <div class="login-icon">📦</div>
 
 <h1>Gudang Karang 0207</h1>
+
 <p>Login Admin Gudang</p>
 
 <div id="loginError" class="error"></div>
@@ -384,27 +416,42 @@ grid-template-columns:1fr
 
 <div class="form-group">
 <label>Email</label>
-<input id="email" type="email" placeholder="Email admin" required>
+<input
+id="email"
+type="email"
+placeholder="Email admin"
+required>
 </div>
 
 <div class="form-group">
 <label>Password</label>
-<input id="password" type="password" placeholder="Password" required>
+<input
+id="password"
+type="password"
+placeholder="Password"
+required>
 </div>
 
-<button id="loginButton" class="btn btn-primary login-btn">
+<button
+id="loginButton"
+class="btn btn-primary login-btn">
 MASUK
 </button>
 
 </form>
+
 </div>
 </div>
 
 
-<!-- APP -->
+<!-- =====================================================
+APP
+===================================================== -->
+
 <div id="app" class="app">
 
 <header>
+
 <div class="header">
 
 <div>
@@ -413,49 +460,68 @@ MASUK
 </div>
 
 <div class="user">
+
 <div id="userEmail"></div>
+
 <br>
-<button class="btn btn-danger btn-small" onclick="logout()">
+
+<button
+class="btn btn-danger btn-small"
+onclick="logout()">
 Keluar
 </button>
+
 </div>
 
 </div>
+
 </header>
 
 
 <div class="container">
 
+<!-- NAVIGATION -->
+
 <nav>
 
-<button class="active" onclick="showPage('dashboard',this)">
+<button
+class="active"
+onclick="showPage('dashboard',this)">
 🏠 Dashboard
 </button>
 
-<button onclick="showPage('barang',this)">
+<button
+onclick="showPage('barang',this)">
 📦 Barang
 </button>
 
-<button onclick="showPage('peminjaman',this)">
+<button
+onclick="showPage('peminjaman',this)">
 📋 Peminjaman
 </button>
 
-<button onclick="showPage('pengembalian',this)">
+<button
+onclick="showPage('pengembalian',this)">
 📥 Pengembalian
 </button>
 
-<button onclick="showPage('riwayat',this)">
+<button
+onclick="showPage('riwayat',this)">
 📜 Riwayat
 </button>
 
-<button onclick="showPage('lokasi',this)">
+<button
+onclick="showPage('lokasi',this)">
 📍 Lokasi
 </button>
 
 </nav>
 
 
-<!-- DASHBOARD -->
+<!-- =====================================================
+DASHBOARD
+===================================================== -->
+
 <section id="dashboard" class="page active">
 
 <div class="cards">
@@ -482,6 +548,7 @@ Keluar
 
 </div>
 
+
 <div class="box">
 
 <h2>📦 Stok Barang</h2>
@@ -496,9 +563,7 @@ Keluar
 <tr>
 <th>Kode</th>
 <th>Nama Barang</th>
-<th>Kategori</th>
 <th>Stok</th>
-<th>Satuan</th>
 <th>Lokasi</th>
 </tr>
 </thead>
@@ -508,12 +573,16 @@ Keluar
 </table>
 
 </div>
+
 </div>
 
 </section>
 
 
-<!-- BARANG -->
+<!-- =====================================================
+BARANG
+===================================================== -->
+
 <section id="barang" class="page">
 
 <div class="box">
@@ -524,7 +593,9 @@ Keluar
 
 <div class="toolbar">
 
-<button class="btn btn-primary" onclick="openBarangModal()">
+<button
+class="btn btn-primary"
+onclick="openBarangModal()">
 + Tambah Barang
 </button>
 
@@ -543,9 +614,7 @@ oninput="renderBarang()">
 <tr>
 <th>Kode</th>
 <th>Nama Barang</th>
-<th>Kategori</th>
 <th>Stok</th>
-<th>Satuan</th>
 <th>Lokasi</th>
 <th>Aksi</th>
 </tr>
@@ -556,12 +625,16 @@ oninput="renderBarang()">
 </table>
 
 </div>
+
 </div>
 
 </section>
 
 
-<!-- PEMINJAMAN -->
+<!-- =====================================================
+PEMINJAMAN
+===================================================== -->
+
 <section id="peminjaman" class="page">
 
 <div class="box">
@@ -572,7 +645,9 @@ oninput="renderBarang()">
 
 <div class="toolbar">
 
-<button class="btn btn-primary" onclick="openPeminjamanModal()">
+<button
+class="btn btn-primary"
+onclick="openPeminjamanModal()">
 + Peminjaman Baru
 </button>
 
@@ -583,6 +658,7 @@ oninput="renderBarang()">
 <table>
 
 <thead>
+
 <tr>
 <th>Nomor</th>
 <th>Peminjam</th>
@@ -593,6 +669,7 @@ oninput="renderBarang()">
 <th>Status</th>
 <th>Aksi</th>
 </tr>
+
 </thead>
 
 <tbody id="peminjamanBody"></tbody>
@@ -600,12 +677,16 @@ oninput="renderBarang()">
 </table>
 
 </div>
+
 </div>
 
 </section>
 
 
-<!-- PENGEMBALIAN -->
+<!-- =====================================================
+PENGEMBALIAN
+===================================================== -->
+
 <section id="pengembalian" class="page">
 
 <div class="box">
@@ -613,8 +694,9 @@ oninput="renderBarang()">
 <h2>📥 Pengembalian</h2>
 
 <p style="color:#6b7280">
-Pilih peminjaman yang akan dikembalikan.
-Stok semua barang pada transaksi akan dikembalikan ke stok gudang.
+Daftar peminjaman yang masih aktif.
+Fitur pencatatan kembali, hilang dan rusak dapat dilanjutkan
+setelah modul peminjaman ini selesai diuji.
 </p>
 
 <div class="table-wrap">
@@ -622,6 +704,7 @@ Stok semua barang pada transaksi akan dikembalikan ke stok gudang.
 <table>
 
 <thead>
+
 <tr>
 <th>Nomor</th>
 <th>Peminjam</th>
@@ -631,6 +714,7 @@ Stok semua barang pada transaksi akan dikembalikan ke stok gudang.
 <th>Status</th>
 <th>Aksi</th>
 </tr>
+
 </thead>
 
 <tbody id="pengembalianBody"></tbody>
@@ -644,7 +728,10 @@ Stok semua barang pada transaksi akan dikembalikan ke stok gudang.
 </section>
 
 
-<!-- RIWAYAT -->
+<!-- =====================================================
+RIWAYAT
+===================================================== -->
+
 <section id="riwayat" class="page">
 
 <div class="box">
@@ -656,6 +743,7 @@ Stok semua barang pada transaksi akan dikembalikan ke stok gudang.
 <table>
 
 <thead>
+
 <tr>
 <th>Nomor</th>
 <th>Peminjam</th>
@@ -664,6 +752,7 @@ Stok semua barang pada transaksi akan dikembalikan ke stok gudang.
 <th>Status</th>
 <th>Aksi</th>
 </tr>
+
 </thead>
 
 <tbody id="riwayatBody"></tbody>
@@ -677,7 +766,10 @@ Stok semua barang pada transaksi akan dikembalikan ke stok gudang.
 </section>
 
 
-<!-- LOKASI -->
+<!-- =====================================================
+LOKASI
+===================================================== -->
+
 <section id="lokasi" class="page">
 
 <div class="box">
@@ -688,7 +780,9 @@ Stok semua barang pada transaksi akan dikembalikan ke stok gudang.
 
 <div class="toolbar">
 
-<button class="btn btn-primary" onclick="openLokasiModal()">
+<button
+class="btn btn-primary"
+onclick="openLokasiModal()">
 + Tambah Lokasi
 </button>
 
@@ -699,12 +793,14 @@ Stok semua barang pada transaksi akan dikembalikan ke stok gudang.
 <table>
 
 <thead>
+
 <tr>
 <th>ID</th>
 <th>Nama Lokasi</th>
 <th>Keterangan</th>
 <th>Aksi</th>
 </tr>
+
 </thead>
 
 <tbody id="lokasiBody"></tbody>
@@ -721,7 +817,10 @@ Stok semua barang pada transaksi akan dikembalikan ke stok gudang.
 </div>
 
 
-<!-- MODAL BARANG -->
+<!-- =====================================================
+MODAL BARANG
+===================================================== -->
+
 <div id="barangModal" class="modal">
 
 <div class="modal-box">
@@ -732,7 +831,9 @@ Stok semua barang pada transaksi akan dikembalikan ke stok gudang.
 Tambah Barang
 </h2>
 
-<button class="close" onclick="closeModal('barangModal')">
+<button
+class="close"
+onclick="closeModal('barangModal')">
 ×
 </button>
 
@@ -742,51 +843,69 @@ Tambah Barang
 
 <form onsubmit="saveBarang(event)">
 
-<input id="barangId" type="hidden">
+<input
+id="barangId"
+type="hidden">
 
 <div class="form-group">
+
 <label>Kode Barang</label>
-<input id="barangKode" required placeholder="Contoh: KRS-001">
+
+<input
+id="barangKode"
+required
+placeholder="Contoh: KRS-001">
+
 </div>
 
 <div class="form-group">
+
 <label>Nama Barang</label>
-<input id="barangNama" required placeholder="Contoh: Kursi Plastik">
+
+<input
+id="barangNama"
+required
+placeholder="Contoh: Kursi">
+
 </div>
 
 <div class="form-group">
-<label>Kategori</label>
-<input id="barangKategori" placeholder="Contoh: Perlengkapan Hajatan">
-</div>
 
-<div class="form-group">
-<label>Satuan</label>
-<input id="barangSatuan" placeholder="Contoh: pcs">
-</div>
-
-<div class="form-group">
 <label>Jumlah / Stok</label>
-<input id="barangStok" type="number" min="0" required>
+
+<input
+id="barangStok"
+type="number"
+min="0"
+required>
+
 </div>
 
 <div class="form-group">
+
 <label>Lokasi</label>
 
 <select id="barangLokasi">
-<option value="">-- Pilih Lokasi --</option>
+
+<option value="">
+-- Pilih Lokasi --
+</option>
+
 </select>
 
 </div>
 
 <div class="form-actions">
 
-<button type="button"
+<button
+type="button"
 class="btn btn-secondary"
 onclick="closeModal('barangModal')">
 Batal
 </button>
 
-<button type="submit"
+<button
+type="submit"
 class="btn btn-primary">
 Simpan
 </button>
@@ -794,11 +913,15 @@ Simpan
 </div>
 
 </form>
+
 </div>
 </div>
 
 
-<!-- MODAL LOKASI -->
+<!-- =====================================================
+MODAL LOKASI
+===================================================== -->
+
 <div id="lokasiModal" class="modal">
 
 <div class="modal-box">
@@ -809,7 +932,9 @@ Simpan
 Tambah Lokasi
 </h2>
 
-<button class="close" onclick="closeModal('lokasiModal')">
+<button
+class="close"
+onclick="closeModal('lokasiModal')">
 ×
 </button>
 
@@ -819,27 +944,42 @@ Tambah Lokasi
 
 <form onsubmit="saveLokasi(event)">
 
-<input id="lokasiId" type="hidden">
+<input
+id="lokasiId"
+type="hidden">
 
 <div class="form-group">
+
 <label>Nama Lokasi</label>
-<input id="lokasiNama" required placeholder="Contoh: Gudang Utama">
+
+<input
+id="lokasiNama"
+required
+placeholder="Contoh: Gudang Utama">
+
 </div>
 
 <div class="form-group">
+
 <label>Keterangan</label>
-<textarea id="lokasiKeterangan" placeholder="Keterangan lokasi"></textarea>
+
+<textarea
+id="lokasiKeterangan"
+placeholder="Keterangan lokasi"></textarea>
+
 </div>
 
 <div class="form-actions">
 
-<button type="button"
+<button
+type="button"
 class="btn btn-secondary"
 onclick="closeModal('lokasiModal')">
 Batal
 </button>
 
-<button type="submit"
+<button
+type="submit"
 class="btn btn-primary">
 Simpan
 </button>
@@ -847,20 +987,27 @@ Simpan
 </div>
 
 </form>
+
 </div>
 </div>
 
 
-<!-- MODAL PEMINJAMAN -->
+<!-- =====================================================
+MODAL PEMINJAMAN
+===================================================== -->
+
 <div id="peminjamanModal" class="modal">
 
 <div class="modal-box">
 
 <div class="modal-header">
 
-<h2>Peminjaman Baru</h2>
+<h2>
+Peminjaman Baru
+</h2>
 
-<button class="close"
+<button
+class="close"
 onclick="closeModal('peminjamanModal')">
 ×
 </button>
@@ -872,41 +1019,81 @@ onclick="closeModal('peminjamanModal')">
 <form onsubmit="savePeminjaman(event)">
 
 <div class="form-group">
+
 <label>Nama Peminjam</label>
-<input id="peminjamNama" required>
+
+<input
+id="peminjamNama"
+required
+placeholder="Nama lengkap">
+
 </div>
 
 <div class="form-group">
+
 <label>No. HP</label>
-<input id="peminjamHp">
+
+<input
+id="peminjamHp"
+placeholder="08xxxxxxxxxx">
+
 </div>
 
 <div class="form-group">
+
 <label>Keperluan</label>
-<textarea id="peminjamKeperluan" required></textarea>
+
+<textarea
+id="peminjamKeperluan"
+required
+placeholder="Contoh: Acara hajatan"></textarea>
+
 </div>
 
 <div class="form-group">
+
 <label>Tanggal Pinjam</label>
-<input id="tanggalPinjam" type="date" required>
+
+<input
+id="tanggalPinjam"
+type="date"
+required>
+
 </div>
 
 <div class="form-group">
+
 <label>Tanggal Rencana Kembali</label>
-<input id="tanggalKembali" type="date" required>
+
+<input
+id="tanggalKembali"
+type="date"
+required>
+
 </div>
 
 
-<h3>📦 Barang yang Dipinjam</h3>
+<!-- DAFTAR BARANG -->
 
-<div id="barangPinjamList"></div>
+<div class="form-group">
+
+<label>Barang yang Dipinjam</label>
+
+<div id="borrowItems"></div>
 
 <button
 type="button"
-class="btn btn-info"
-onclick="addBarangPinjam()">
+class="btn btn-secondary"
+onclick="addBorrowItem()">
 + Tambah Barang
 </button>
+
+</div>
+
+
+<div id="borrowSummary" class="borrow-summary">
+Belum ada barang dipilih.
+</div>
 
 
 <div class="form-actions">
@@ -919,6 +1106,7 @@ Batal
 </button>
 
 <button
+id="saveBorrowButton"
 type="submit"
 class="btn btn-primary">
 Simpan Peminjaman
@@ -932,16 +1120,22 @@ Simpan Peminjaman
 </div>
 
 
-<!-- DETAIL -->
+<!-- =====================================================
+MODAL DETAIL
+===================================================== -->
+
 <div id="detailModal" class="modal">
 
 <div class="modal-box">
 
 <div class="modal-header">
 
-<h2>Detail Peminjaman</h2>
+<h2>
+Detail Peminjaman
+</h2>
 
-<button class="close"
+<button
+class="close"
 onclick="closeModal('detailModal')">
 ×
 </button>
@@ -953,9 +1147,9 @@ onclick="closeModal('detailModal')">
 <div class="form-actions">
 
 <button
-class="btn btn-info"
-onclick="downloadCurrentDetail()">
-📥 Download Gambar
+class="btn btn-secondary"
+onclick="downloadDetailImage()">
+⬇️ Download Gambar
 </button>
 
 <button
@@ -970,15 +1164,16 @@ Tutup
 </div>
 
 
-<!-- AREA GAMBAR DOWNLOAD -->
+<!-- AREA UNTUK GAMBAR DOWNLOAD -->
+
 <div id="downloadArea" class="download-area"></div>
 
 
 <script>
 
-/* ==================================================
+/* =====================================================
 SUPABASE
-================================================== */
+===================================================== */
 
 const SUPABASE_URL =
 "https://jasvjvvbmicywmamxeln.supabase.co";
@@ -993,59 +1188,62 @@ SUPABASE_KEY
 );
 
 
-/* ==================================================
+/* =====================================================
 DATA
-================================================== */
+===================================================== */
 
-let barangData=[];
-let lokasiData=[];
-let peminjamanData=[];
-let currentDetailId=null;
-let barangRowCounter=0;
+let barangData = [];
+let lokasiData = [];
+let peminjamanData = [];
+
+let currentDetailId = null;
+
+let borrowItems = [];
 
 
-/* ==================================================
+/* =====================================================
 LOGIN
-================================================== */
+===================================================== */
 
 async function login(e){
 
 e.preventDefault();
 
-const email=
+const email =
 document.getElementById("email").value.trim();
 
-const password=
+const password =
 document.getElementById("password").value;
 
-const button=
+const button =
 document.getElementById("loginButton");
 
-const error=
+const error =
 document.getElementById("loginError");
 
 hideError("loginError");
 
-button.disabled=true;
-button.textContent="MEMPROSES...";
+button.disabled = true;
+button.textContent = "MEMPROSES...";
 
-const {data,error:err}=
+const {data,error:err} =
 await db.auth.signInWithPassword({
 email,
 password
 });
 
-button.disabled=false;
-button.textContent="MASUK";
+button.disabled = false;
+button.textContent = "MASUK";
 
 if(err){
 
 showError(
 "loginError",
-"Login gagal: "+err.message
+"Login gagal: " + err.message
 );
 
 return;
+
 }
 
 showApp(data.user);
@@ -1053,13 +1251,9 @@ showApp(data.user);
 }
 
 
-/* ==================================================
-SESSION
-================================================== */
-
 async function checkSession(){
 
-const {data}=
+const {data} =
 await db.auth.getSession();
 
 if(data.session){
@@ -1077,18 +1271,18 @@ showLogin();
 
 function showLogin(){
 
-document.getElementById("loginPage").style.display="flex";
-document.getElementById("app").style.display="none";
+document.getElementById("loginPage").style.display = "flex";
+document.getElementById("app").style.display = "none";
 
 }
 
 
 async function showApp(user){
 
-document.getElementById("loginPage").style.display="none";
-document.getElementById("app").style.display="block";
+document.getElementById("loginPage").style.display = "none";
+document.getElementById("app").style.display = "block";
 
-document.getElementById("userEmail").textContent=
+document.getElementById("userEmail").textContent =
 user.email || "";
 
 await loadAll();
@@ -1105,14 +1299,16 @@ showLogin();
 }
 
 
-/* ==================================================
+/* =====================================================
 LOAD ALL
-================================================== */
+===================================================== */
 
 async function loadAll(){
 
 await loadLokasi();
+
 await loadBarang();
+
 await loadPeminjaman();
 
 updateDashboard();
@@ -1120,29 +1316,32 @@ updateDashboard();
 }
 
 
-/* ==================================================
+/* =====================================================
 BARANG
-================================================== */
+===================================================== */
 
 async function loadBarang(){
 
-const {data,error}=
+const {data,error} =
 await db
 .from("barang")
 .select("id,kode,nama,kategori,satuan,stok,lokasi_id,qr_,active,created_at")
-.order("created_at",{ascending:true});
+.order("created_at",{ascending:false});
 
 if(error){
 
 console.error(error);
 
-showError("barangError",error.message);
+showError(
+"barangError",
+error.message
+);
 
 return;
 
 }
 
-barangData=data || [];
+barangData = data || [];
 
 renderBarang();
 renderDashboard();
@@ -1154,61 +1353,71 @@ updateDashboard();
 
 function renderBarang(){
 
-const body=
+const body =
 document.getElementById("barangBody");
 
-const search=
+const search =
 (
 document.getElementById("searchBarang")?.value || ""
 ).toLowerCase();
 
-const filtered=
-barangData.filter(x=>
-String(x.kode||"").toLowerCase().includes(search) ||
-String(x.nama||"").toLowerCase().includes(search)
+const filtered =
+barangData.filter(x =>
+String(x.kode || "")
+.toLowerCase()
+.includes(search)
+||
+String(x.nama || "")
+.toLowerCase()
+.includes(search)
 );
 
-if(filtered.length===0){
+if(filtered.length === 0){
 
-body.innerHTML=`
+body.innerHTML = `
 <tr>
-<td colspan="7" class="empty">
+<td colspan="5" class="empty">
 Belum ada barang
 </td>
-</tr>`;
+</tr>
+`;
 
 return;
 
 }
 
-body.innerHTML=
-filtered.map(x=>`
+body.innerHTML =
+filtered.map(x => `
 
 <tr>
 
-<td><b>${esc(x.kode)}</b></td>
+<td>
+<b>${esc(x.kode || "-")}</b>
+</td>
 
-<td>${esc(x.nama)}</td>
-
-<td>${esc(x.kategori||"-")}</td>
+<td>
+${esc(x.nama || "-")}
+</td>
 
 <td>
 
 <span class="badge ${
-Number(x.stok)<=10
-?"red"
-:Number(x.stok)<=50
-?"orange"
-:"green"
+Number(x.stok) <= 10
+? "red"
+: Number(x.stok) <= 50
+? "orange"
+: "green"
 }">
+
 ${format(x.stok)}
+
 </span>
 
 </td>
 
-<td>${esc(x.satuan||"pcs")}</td>
-
-<td>${getLokasi(x.lokasi_id)}</td>
+<td>
+${getLokasi(x.lokasi_id)}
+</td>
 
 <td>
 
@@ -1230,17 +1439,16 @@ Edit
 function openBarangModal(){
 
 document.getElementById("barangModalTitle")
-.textContent="Tambah Barang";
+.textContent = "Tambah Barang";
 
-document.getElementById("barangId").value="";
-document.getElementById("barangKode").value="";
-document.getElementById("barangNama").value="";
-document.getElementById("barangKategori").value="";
-document.getElementById("barangSatuan").value="pcs";
-document.getElementById("barangStok").value="";
-document.getElementById("barangLokasi").value="";
+document.getElementById("barangId").value = "";
+document.getElementById("barangKode").value = "";
+document.getElementById("barangNama").value = "";
+document.getElementById("barangStok").value = "";
 
 fillLokasiSelect();
+
+document.getElementById("barangLokasi").value = "";
 
 hideError("barangFormError");
 
@@ -1251,24 +1459,30 @@ openModal("barangModal");
 
 function editBarang(id){
 
-const x=
-barangData.find(a=>String(a.id)===String(id));
+const x =
+barangData.find(
+a => String(a.id) === String(id)
+);
 
 if(!x)return;
 
 document.getElementById("barangModalTitle")
-.textContent="Edit Barang";
+.textContent = "Edit Barang";
 
-document.getElementById("barangId").value=x.id;
-document.getElementById("barangKode").value=x.kode || "";
-document.getElementById("barangNama").value=x.nama || "";
-document.getElementById("barangKategori").value=x.kategori || "";
-document.getElementById("barangSatuan").value=x.satuan || "pcs";
-document.getElementById("barangStok").value=x.stok ?? "";
+document.getElementById("barangId").value = x.id;
+
+document.getElementById("barangKode").value =
+x.kode || "";
+
+document.getElementById("barangNama").value =
+x.nama || "";
+
+document.getElementById("barangStok").value =
+x.stok ?? 0;
 
 fillLokasiSelect();
 
-document.getElementById("barangLokasi").value=
+document.getElementById("barangLokasi").value =
 x.lokasi_id || "";
 
 hideError("barangFormError");
@@ -1282,58 +1496,71 @@ async function saveBarang(e){
 
 e.preventDefault();
 
-const id=
+const id =
 document.getElementById("barangId").value;
 
-const kode=
-document.getElementById("barangKode").value.trim();
+const kode =
+document.getElementById("barangKode")
+.value.trim();
 
-const nama=
-document.getElementById("barangNama").value.trim();
+const nama =
+document.getElementById("barangNama")
+.value.trim();
 
-const payload={
-
-kode:kode,
-
-nama:nama,
-
-kategori:
-document.getElementById("barangKategori").value.trim(),
-
-satuan:
-document.getElementById("barangSatuan").value.trim() || "pcs",
-
-stok:Number(
+const stok =
+Number(
 document.getElementById("barangStok").value
-),
+);
 
-lokasi_id:
-document.getElementById("barangLokasi").value || null,
+const lokasi =
+document.getElementById("barangLokasi").value || null;
 
-active:true
+
+/*
+  qr_ dibuat otomatis agar tidak null.
+*/
+
+const qrValue =
+id
+? (
+barangData.find(x =>
+String(x.id) === String(id)
+)?.qr_ || ("QR-" + Date.now())
+)
+: ("QR-" + Date.now());
+
+
+const payload = {
+
+kode: kode,
+
+nama: nama,
+
+stok: stok,
+
+lokasi_id: lokasi,
+
+qr_: qrValue,
+
+active: true
 
 };
-
-
-if(!id){
-
-payload.qr_=kode;
-
-}
 
 
 let result;
 
 if(id){
 
-result=await db
+result =
+await db
 .from("barang")
 .update(payload)
 .eq("id",id);
 
 }else{
 
-result=await db
+result =
+await db
 .from("barang")
 .insert(payload);
 
@@ -1351,6 +1578,7 @@ return;
 
 }
 
+
 closeModal("barangModal");
 
 await loadBarang();
@@ -1358,13 +1586,13 @@ await loadBarang();
 }
 
 
-/* ==================================================
+/* =====================================================
 LOKASI
-================================================== */
+===================================================== */
 
 async function loadLokasi(){
 
-const {data,error}=
+const {data,error} =
 await db
 .from("lokasi")
 .select("id,nama,keterangan")
@@ -1372,16 +1600,18 @@ await db
 
 if(error){
 
-showError("lokasiError",error.message);
+showError(
+"lokasiError",
+error.message
+);
 
 return;
 
 }
 
-lokasiData=data || [];
+lokasiData = data || [];
 
 renderLokasi();
-
 fillLokasiSelect();
 
 }
@@ -1389,32 +1619,37 @@ fillLokasiSelect();
 
 function renderLokasi(){
 
-const body=
+const body =
 document.getElementById("lokasiBody");
 
 if(!lokasiData.length){
 
-body.innerHTML=`
+body.innerHTML = `
 <tr>
 <td colspan="4" class="empty">
 Belum ada lokasi
 </td>
-</tr>`;
+</tr>
+`;
 
 return;
 
 }
 
-body.innerHTML=
-lokasiData.map(x=>`
+body.innerHTML =
+lokasiData.map(x => `
 
 <tr>
 
 <td>${esc(x.id)}</td>
 
-<td><b>${esc(x.nama)}</b></td>
+<td>
+<b>${esc(x.nama)}</b>
+</td>
 
-<td>${esc(x.keterangan||"-")}</td>
+<td>
+${esc(x.keterangan || "-")}
+</td>
 
 <td>
 
@@ -1435,22 +1670,28 @@ Edit
 
 function fillLokasiSelect(){
 
-const select=
+const select =
 document.getElementById("barangLokasi");
 
 if(!select)return;
 
-const current=select.value;
+const current =
+select.value;
 
-select.innerHTML=
-`<option value="">-- Pilih Lokasi --</option>`+
-lokasiData.map(x=>
-`<option value="${escAttr(x.id)}">
+select.innerHTML =
+`
+<option value="">
+-- Pilih Lokasi --
+</option>
+`
++
+lokasiData.map(x => `
+<option value="${escAttr(x.id)}">
 ${esc(x.nama)}
-</option>`
-).join("");
+</option>
+`).join("");
 
-select.value=current;
+select.value = current;
 
 }
 
@@ -1458,11 +1699,11 @@ select.value=current;
 function openLokasiModal(){
 
 document.getElementById("lokasiModalTitle")
-.textContent="Tambah Lokasi";
+.textContent = "Tambah Lokasi";
 
-document.getElementById("lokasiId").value="";
-document.getElementById("lokasiNama").value="";
-document.getElementById("lokasiKeterangan").value="";
+document.getElementById("lokasiId").value = "";
+document.getElementById("lokasiNama").value = "";
+document.getElementById("lokasiKeterangan").value = "";
 
 hideError("lokasiFormError");
 
@@ -1473,17 +1714,23 @@ openModal("lokasiModal");
 
 function editLokasi(id){
 
-const x=
-lokasiData.find(a=>String(a.id)===String(id));
+const x =
+lokasiData.find(
+a => String(a.id) === String(id)
+);
 
 if(!x)return;
 
 document.getElementById("lokasiModalTitle")
-.textContent="Edit Lokasi";
+.textContent = "Edit Lokasi";
 
-document.getElementById("lokasiId").value=x.id;
-document.getElementById("lokasiNama").value=x.nama || "";
-document.getElementById("lokasiKeterangan").value=
+document.getElementById("lokasiId").value =
+x.id;
+
+document.getElementById("lokasiNama").value =
+x.nama || "";
+
+document.getElementById("lokasiKeterangan").value =
 x.keterangan || "";
 
 hideError("lokasiFormError");
@@ -1497,16 +1744,18 @@ async function saveLokasi(e){
 
 e.preventDefault();
 
-const id=
+const id =
 document.getElementById("lokasiId").value;
 
-const payload={
+const payload = {
 
 nama:
-document.getElementById("lokasiNama").value.trim(),
+document.getElementById("lokasiNama")
+.value.trim(),
 
 keterangan:
-document.getElementById("lokasiKeterangan").value.trim()
+document.getElementById("lokasiKeterangan")
+.value.trim()
 
 };
 
@@ -1514,14 +1763,16 @@ let result;
 
 if(id){
 
-result=await db
+result =
+await db
 .from("lokasi")
 .update(payload)
 .eq("id",id);
 
 }else{
 
-result=await db
+result =
+await db
 .from("lokasi")
 .insert(payload);
 
@@ -1546,13 +1797,13 @@ await loadBarang();
 }
 
 
-/* ==================================================
+/* =====================================================
 PEMINJAMAN
-================================================== */
+===================================================== */
 
 async function loadPeminjaman(){
 
-const {data,error}=
+const {data,error} =
 await db
 .from("peminjaman")
 .select("*")
@@ -1569,7 +1820,8 @@ return;
 
 }
 
-peminjamanData=data || [];
+peminjamanData =
+data || [];
 
 renderPeminjaman();
 renderPengembalian();
@@ -1581,42 +1833,55 @@ updateDashboard();
 
 function renderPeminjaman(){
 
-const body=
+const body =
 document.getElementById("peminjamanBody");
 
 if(!peminjamanData.length){
 
-body.innerHTML=`
+body.innerHTML = `
 <tr>
 <td colspan="8" class="empty">
 Belum ada peminjaman
 </td>
-</tr>`;
+</tr>
+`;
 
 return;
 
 }
 
-body.innerHTML=
-peminjamanData.map(x=>`
+body.innerHTML =
+peminjamanData.map(x => `
 
 <tr>
 
-<td><b>${esc(x.nomor||"-")}</b></td>
+<td>
+<b>${esc(x.nomor || "-")}</b>
+</td>
 
-<td>${esc(x.peminjam)}</td>
+<td>
+${esc(x.peminjam || "-")}
+</td>
 
-<td>${esc(x.no_hp||"-")}</td>
+<td>
+${esc(x.no_hp || "-")}
+</td>
 
-<td>${esc(x.keperluan||"-")}</td>
+<td>
+${esc(x.keperluan || "-")}
+</td>
 
-<td>${formatDate(x.tanggal_pinjam)}</td>
+<td>
+${formatDate(x.tanggal_pinjam)}
+</td>
 
-<td>${formatDate(x.tanggal_rencana_kembali)}</td>
+<td>
+${formatDate(x.tanggal_rencana_kembali)}
+</td>
 
 <td>
 <span class="status">
-${esc(x.status||"-")}
+${esc(x.status || "-")}
 </span>
 </td>
 
@@ -1637,107 +1902,161 @@ Detail
 }
 
 
-/* ==================================================
-FORM MULTI BARANG
-================================================== */
+/* =====================================================
+FORM PEMINJAMAN MULTI BARANG
+===================================================== */
 
 function openPeminjamanModal(){
 
-document.getElementById("peminjamNama").value="";
-document.getElementById("peminjamHp").value="";
-document.getElementById("peminjamKeperluan").value="";
+document.getElementById("peminjamNama").value = "";
+document.getElementById("peminjamHp").value = "";
+document.getElementById("peminjamKeperluan").value = "";
 
-document.getElementById("tanggalPinjam").value=
+document.getElementById("tanggalPinjam").value =
 today();
 
-document.getElementById("tanggalKembali").value="";
+document.getElementById("tanggalKembali").value = "";
 
-document.getElementById("barangPinjamList").innerHTML="";
+borrowItems = [];
 
-barangRowCounter=0;
+document.getElementById("borrowItems").innerHTML = "";
 
-addBarangPinjam();
+fillBorrowBarang();
+
+addBorrowItem();
 
 hideError("peminjamanFormError");
 
 openModal("peminjamanModal");
 
+updateBorrowSummary();
+
 }
 
 
-function addBarangPinjam(){
+/*
+  Buat satu baris barang.
+*/
 
-barangRowCounter++;
+function addBorrowItem(){
 
-const id=barangRowCounter;
+if(!barangData.length){
 
-const container=
-document.getElementById("barangPinjamList");
+showError(
+"peminjamanFormError",
+"Belum ada barang. Tambahkan barang terlebih dahulu."
+);
 
-const div=
-document.createElement("div");
+return;
 
-div.className="item-row";
+}
 
-div.id="barangRow_"+id;
+borrowItems.push({
+id: Date.now() + Math.random(),
+barang_id: "",
+qty: 1
+});
 
-div.innerHTML=`
+renderBorrowItems();
 
-<div class="item-number">
-Barang ${id}
+}
+
+
+function removeBorrowItem(index){
+
+borrowItems.splice(index,1);
+
+renderBorrowItems();
+
+updateBorrowSummary();
+
+}
+
+
+function renderBorrowItems(){
+
+const container =
+document.getElementById("borrowItems");
+
+if(!borrowItems.length){
+
+container.innerHTML = `
+<div class="empty">
+Belum ada barang.
 </div>
+`;
 
-<div class="item-grid">
+return;
+
+}
+
+container.innerHTML =
+borrowItems.map((item,index) => {
+
+return `
+
+<div class="item-row">
+
+<div class="item-row-top">
 
 <div>
 
 <label>Barang</label>
 
 <select
-class="pinjam-barang"
-required>
+onchange="changeBorrowBarang(${index},this.value)">
 
 <option value="">
 -- Pilih Barang --
 </option>
 
-${barangData.map(x=>`
+${
+barangData.map(b => `
 
-<option value="${escAttr(x.id)}">
+<option
+value="${escAttr(b.id)}"
+${String(item.barang_id) === String(b.id) ? "selected" : ""}>
 
-${esc(x.kode)}
--
-${esc(x.nama)}
-
-(Stok: ${format(x.stok)})
+${esc(b.nama)}
+(Stok: ${format(b.stok)})
 
 </option>
 
-`).join("")}
+`).join("")
+}
 
 </select>
 
+<div class="item-stock">
+
+${
+getBorrowStockText(item.barang_id)
+}
+
 </div>
+
+</div>
+
 
 <div>
 
-<label>Jumlah</label>
+<label>Qty</label>
 
 <input
-class="pinjam-qty"
 type="number"
 min="1"
-required
-placeholder="Jumlah">
+value="${Number(item.qty) || 1}"
+oninput="changeBorrowQty(${index},this.value)">
 
 </div>
+
 
 <div>
 
 <button
 type="button"
 class="btn btn-danger btn-small"
-onclick="removeBarangPinjam(${id})">
+onclick="removeBorrowItem(${index})">
 
 Hapus
 
@@ -1747,62 +2066,185 @@ Hapus
 
 </div>
 
+</div>
+
 `;
 
-container.appendChild(div);
+}).join("");
 
 }
 
 
-function removeBarangPinjam(id){
+function fillBorrowBarang(){
 
-const rows=
-document.querySelectorAll(".item-row");
+}
 
-if(rows.length<=1){
 
-showError(
-"peminjamanFormError",
-"Minimal harus ada 1 barang."
+function changeBorrowBarang(index,value){
+
+borrowItems[index].barang_id = value;
+
+const barang =
+barangData.find(
+x => String(x.id) === String(value)
 );
+
+if(barang){
+
+if(Number(borrowItems[index].qty) > Number(barang.stok)){
+
+borrowItems[index].qty =
+Number(barang.stok);
+
+}
+
+}
+
+renderBorrowItems();
+
+updateBorrowSummary();
+
+}
+
+
+function changeBorrowQty(index,value){
+
+let qty =
+Number(value);
+
+if(!Number.isFinite(qty) || qty < 1){
+
+qty = 1;
+
+}
+
+const item =
+borrowItems[index];
+
+const barang =
+barangData.find(
+x => String(x.id) === String(item.barang_id)
+);
+
+if(barang && qty > Number(barang.stok)){
+
+qty = Number(barang.stok);
+
+}
+
+borrowItems[index].qty = qty;
+
+updateBorrowSummary();
+
+}
+
+
+function getBorrowStockText(barangId){
+
+if(!barangId){
+
+return "Pilih barang terlebih dahulu.";
+
+}
+
+const barang =
+barangData.find(
+x => String(x.id) === String(barangId)
+);
+
+if(!barang){
+
+return "Barang tidak ditemukan.";
+
+}
+
+return "Stok tersedia: " +
+format(barang.stok);
+
+}
+
+
+function updateBorrowSummary(){
+
+const summary =
+document.getElementById("borrowSummary");
+
+const selected =
+borrowItems.filter(
+x => x.barang_id
+);
+
+if(!selected.length){
+
+summary.innerHTML =
+"Belum ada barang dipilih.";
 
 return;
 
 }
 
-document
-.getElementById("barangRow_"+id)
-?.remove();
+let total = 0;
 
-renumberBarangRows();
+let html =
+"<b>Barang yang dipinjam:</b><br>";
 
-}
+selected.forEach(item => {
 
+const barang =
+barangData.find(
+x => String(x.id) === String(item.barang_id)
+);
 
-function renumberBarangRows(){
+if(!barang)return;
 
-document
-.querySelectorAll(".item-row")
-.forEach((row,index)=>{
+total += Number(item.qty || 0);
 
-const title=
-row.querySelector(".item-number");
-
-if(title){
-
-title.textContent=
-"Barang "+(index+1);
-
-}
+html +=
+"• " +
+esc(barang.nama) +
+" × " +
+format(item.qty) +
+"<br>";
 
 });
 
+html +=
+"<hr style='border:0;border-top:1px solid #bbf7d0;margin:8px 0'>";
+
+html +=
+"<b>Total jumlah barang: " +
+format(total) +
+"</b>";
+
+summary.innerHTML = html;
+
 }
 
 
-/* ==================================================
+/* =====================================================
+NOMOR PEMINJAMAN
+===================================================== */
+
+function generateNomor(){
+
+const date =
+today().replace(/-/g,"");
+
+const random =
+String(
+Math.floor(
+1000 + Math.random()*9000
+)
+);
+
+return "PJ-" + date + "-" + random;
+
+}
+
+
+/* =====================================================
 SIMPAN PEMINJAMAN
-================================================== */
+===================================================== */
 
 async function savePeminjaman(e){
 
@@ -1810,34 +2252,38 @@ e.preventDefault();
 
 hideError("peminjamanFormError");
 
-const peminjam=
+
+const peminjam =
 document.getElementById("peminjamNama")
 .value.trim();
 
-const noHp=
+const noHp =
 document.getElementById("peminjamHp")
 .value.trim();
 
-const keperluan=
+const keperluan =
 document.getElementById("peminjamKeperluan")
 .value.trim();
 
-const tanggalPinjam=
+const tanggalPinjam =
 document.getElementById("tanggalPinjam")
 .value;
 
-const tanggalKembali=
+const tanggalKembali =
 document.getElementById("tanggalKembali")
 .value;
 
 
-const rows=
-Array.from(
-document.querySelectorAll(".item-row")
+/*
+  Validasi barang
+*/
+
+const selectedItems =
+borrowItems.filter(
+x => x.barang_id
 );
 
-
-if(!rows.length){
+if(!selectedItems.length){
 
 showError(
 "peminjamanFormError",
@@ -1849,26 +2295,26 @@ return;
 }
 
 
-const items=[];
-const used={};
+/*
+  Pastikan tidak ada barang yang sama
+*/
 
-
-for(const row of rows){
-
-const barangId=
-row.querySelector(".pinjam-barang").value;
-
-const qty=
-Number(
-row.querySelector(".pinjam-qty").value
+const ids =
+selectedItems.map(
+x => String(x.barang_id)
 );
 
+const duplicate =
+ids.some(
+(id,index) =>
+ids.indexOf(id) !== index
+);
 
-if(!barangId || qty<=0){
+if(duplicate){
 
 showError(
 "peminjamanFormError",
-"Semua barang dan jumlah harus diisi."
+"Barang yang sama tidak boleh dipilih dua kali. Gabungkan jumlahnya dalam satu baris."
 );
 
 return;
@@ -1876,25 +2322,16 @@ return;
 }
 
 
-if(used[barangId]){
+/*
+  Validasi stok
+*/
 
-showError(
-"peminjamanFormError",
-"Barang yang sama tidak boleh dipilih dua kali. Gabungkan jumlahnya."
-);
+for(const item of selectedItems){
 
-return;
-
-}
-
-used[barangId]=true;
-
-
-const barang=
+const barang =
 barangData.find(
-x=>String(x.id)===String(barangId)
+x => String(x.id) === String(item.barang_id)
 );
-
 
 if(!barang){
 
@@ -1907,80 +2344,75 @@ return;
 
 }
 
+const qty =
+Number(item.qty);
 
-if(qty>Number(barang.stok)){
+if(qty <= 0){
 
 showError(
 "peminjamanFormError",
-`Stok ${barang.nama} hanya ${format(barang.stok)}.`
+"Jumlah barang harus lebih dari 0."
 );
 
 return;
 
 }
 
-
-items.push({
-barangId,
-qty,
-barang
-});
-
-}
-
-
-if(!tanggalKembali){
+if(qty > Number(barang.stok)){
 
 showError(
 "peminjamanFormError",
-"Tanggal rencana kembali wajib diisi."
+"Jumlah " +
+barang.nama +
+" melebihi stok tersedia."
 );
 
 return;
 
 }
 
-
-/* nomor otomatis */
-
-const nomor=
-await generateNomorPeminjaman();
-
-
-if(!nomor){
-
-showError(
-"peminjamanFormError",
-"Gagal membuat nomor peminjaman."
-);
-
-return;
-
 }
 
 
-/* simpan peminjaman */
+/*
+  Nomor otomatis.
+*/
 
-const payload={
+const nomor =
+generateNomor();
 
-nomor:nomor,
 
-peminjam:peminjam,
+/*
+  Simpan header peminjaman.
+*/
 
-no_hp:noHp,
+const payload = {
 
-keperluan:keperluan,
+nomor: nomor,
 
-tanggal_pinjam:tanggalPinjam,
+peminjam: peminjam,
 
-tanggal_rencana_kembali:tanggalKembali,
+no_hp: noHp,
 
-status:"dipinjam"
+keperluan: keperluan,
+
+tanggal_pinjam: tanggalPinjam,
+
+tanggal_rencana_kembali: tanggalKembali,
+
+status: "dipinjam"
 
 };
 
 
-const {data,error}=
+const saveButton =
+document.getElementById("saveBorrowButton");
+
+saveButton.disabled = true;
+saveButton.textContent = "MENYIMPAN...";
+
+
+const {data,error} =
 await db
 .from("peminjaman")
 .insert(payload)
@@ -1989,6 +2421,9 @@ await db
 
 
 if(error){
+
+saveButton.disabled = false;
+saveButton.textContent = "Simpan Peminjaman";
 
 showError(
 "peminjamanFormError",
@@ -2000,29 +2435,32 @@ return;
 }
 
 
-const details=
-items.map(item=>({
+/*
+  Simpan semua detail barang.
+*/
 
-peminjaman_id:data.id,
+const detailRows =
+selectedItems.map(item => ({
 
-barang_id:item.barangId,
+peminjaman_id: data.id,
 
-qty_pinjam:item.qty
+barang_id: item.barang_id,
+
+qty_pinjam: Number(item.qty)
 
 }));
 
 
-const detailResult=
+const detailResult =
 await db
 .from("peminjaman_detail")
-.insert(details);
+.insert(detailRows);
 
 
 if(detailResult.error){
 
 /*
-Jika detail gagal, hapus header agar
-tidak meninggalkan peminjaman kosong.
+  Coba hapus header jika detail gagal.
 */
 
 await db
@@ -2030,9 +2468,12 @@ await db
 .delete()
 .eq("id",data.id);
 
+saveButton.disabled = false;
+saveButton.textContent = "Simpan Peminjaman";
+
 showError(
 "peminjamanFormError",
-"Detail barang gagal disimpan: "+
+"Detail barang gagal disimpan: " +
 detailResult.error.message
 );
 
@@ -2042,152 +2483,88 @@ return;
 
 
 /*
-Kurangi stok.
+  Berhasil.
 */
 
-for(const item of items){
-
-const stokBaru=
-Number(item.barang.stok)-item.qty;
-
-const updateResult=
-await db
-.from("barang")
-.update({
-stok:stokBaru
-})
-.eq("id",item.barangId);
-
-if(updateResult.error){
-
-console.error(
-"Stok gagal diperbarui:",
-updateResult.error
-);
-
-}
-
-}
-
+saveButton.disabled = false;
+saveButton.textContent = "Simpan Peminjaman";
 
 closeModal("peminjamanModal");
 
-await loadBarang();
 await loadPeminjaman();
 
 alert(
-"Peminjaman berhasil disimpan.\nNomor: "+
+"Peminjaman berhasil disimpan.\n\nNomor: " +
 nomor
 );
 
 }
 
 
-/* ==================================================
-NOMOR PEMINJAMAN
-================================================== */
-
-async function generateNomorPeminjaman(){
-
-const prefix="PJ-"+today().replace(/-/g,"");
-
-const {data,error}=
-await db
-.from("peminjaman")
-.select("nomor")
-.like("nomor",prefix+"-%")
-.order("nomor",{ascending:false})
-.limit(1);
-
-if(error){
-
-console.error(error);
-
-return null;
-
-}
-
-
-let next=1;
-
-
-if(data && data.length){
-
-const last=
-String(data[0].nomor||"");
-
-const parts=
-last.split("-");
-
-const n=
-parseInt(parts[parts.length-1]);
-
-if(!isNaN(n)){
-
-next=n+1;
-
-}
-
-}
-
-
-return prefix+"-"+String(next).padStart(3,"0");
-
-}
-
-
-/* ==================================================
+/* =====================================================
 PENGEMBALIAN
-================================================== */
+===================================================== */
 
 function renderPengembalian(){
 
-const body=
+const body =
 document.getElementById("pengembalianBody");
 
-const aktif=
-peminjamanData.filter(x=>
-String(x.status||"").toLowerCase()!=="selesai"
+const aktif =
+peminjamanData.filter(
+x =>
+String(x.status).toLowerCase() !== "selesai"
 );
 
 if(!aktif.length){
 
-body.innerHTML=`
+body.innerHTML = `
 <tr>
 <td colspan="7" class="empty">
 Tidak ada peminjaman aktif
 </td>
-</tr>`;
+</tr>
+`;
 
 return;
 
 }
 
-body.innerHTML=
-aktif.map(x=>`
+body.innerHTML =
+aktif.map(x => `
 
 <tr>
 
-<td><b>${esc(x.nomor||"-")}</b></td>
+<td>
+<b>${esc(x.nomor || "-")}</b>
+</td>
 
-<td>${esc(x.peminjam)}</td>
+<td>
+${esc(x.peminjam || "-")}
+</td>
 
-<td>${esc(x.keperluan||"-")}</td>
+<td>
+${esc(x.keperluan || "-")}
+</td>
 
-<td>${formatDate(x.tanggal_pinjam)}</td>
+<td>
+${formatDate(x.tanggal_pinjam)}
+</td>
 
-<td>${formatDate(x.tanggal_rencana_kembali)}</td>
+<td>
+${formatDate(x.tanggal_rencana_kembali)}
+</td>
 
-<td>${esc(x.status||"-")}</td>
+<td>
+${esc(x.status || "-")}
+</td>
 
 <td>
 
 <button
 class="btn btn-primary btn-small"
-onclick="prosesPengembalian('${x.id}')">
-
-Kembalikan
-
+onclick="showDetail('${x.id}')">
+Proses
 </button>
 
 </td>
@@ -2199,154 +2576,53 @@ Kembalikan
 }
 
 
-async function prosesPengembalian(id){
-
-const peminjaman=
-peminjamanData.find(
-x=>String(x.id)===String(id)
-);
-
-if(!peminjaman)return;
-
-
-if(!confirm(
-"Proses pengembalian "+
-(peminjaman.nomor||"peminjaman ini")+
-"?\n\nStok semua barang akan dikembalikan ke gudang."
-)){
-
-return;
-
-}
-
-
-const {data:details,error}=
-await db
-.from("peminjaman_detail")
-.select("barang_id,qty_pinjam")
-.eq("peminjaman_id",id);
-
-
-if(error){
-
-alert(
-"Gagal mengambil detail: "+
-error.message
-);
-
-return;
-
-}
-
-
-/* kembalikan stok */
-
-for(const d of (details||[])){
-
-const barang=
-barangData.find(
-x=>String(x.id)===String(d.barang_id)
-);
-
-if(!barang)continue;
-
-const stokBaru=
-Number(barang.stok||0)+
-Number(d.qty_pinjam||0);
-
-
-const result=
-await db
-.from("barang")
-.update({
-stok:stokBaru
-})
-.eq("id",d.barang_id);
-
-
-if(result.error){
-
-alert(
-"Gagal mengembalikan stok "+
-barang.nama+
-": "+
-result.error.message
-);
-
-return;
-
-}
-
-}
-
-
-/* update status */
-
-const result=
-await db
-.from("peminjaman")
-.update({
-status:"selesai"
-})
-.eq("id",id);
-
-
-if(result.error){
-
-alert(
-"Stok sudah dikembalikan, tetapi status gagal diperbarui: "+
-result.error.message
-);
-
-return;
-
-}
-
-
-await loadBarang();
-await loadPeminjaman();
-
-alert("Pengembalian berhasil.");
-
-}
-
-
-/* ==================================================
+/* =====================================================
 RIWAYAT
-================================================== */
+===================================================== */
 
 function renderRiwayat(){
 
-const body=
+const body =
 document.getElementById("riwayatBody");
 
 if(!peminjamanData.length){
 
-body.innerHTML=`
+body.innerHTML = `
 <tr>
 <td colspan="6" class="empty">
 Belum ada riwayat
 </td>
-</tr>`;
+</tr>
+`;
 
 return;
 
 }
 
-body.innerHTML=
-peminjamanData.map(x=>`
+body.innerHTML =
+peminjamanData.map(x => `
 
 <tr>
 
-<td><b>${esc(x.nomor||"-")}</b></td>
+<td>
+<b>${esc(x.nomor || "-")}</b>
+</td>
 
-<td>${esc(x.peminjam)}</td>
+<td>
+${esc(x.peminjam || "-")}
+</td>
 
-<td>${esc(x.keperluan||"-")}</td>
+<td>
+${esc(x.keperluan || "-")}
+</td>
 
-<td>${formatDate(x.tanggal_pinjam)}</td>
+<td>
+${formatDate(x.tanggal_pinjam)}
+</td>
 
-<td>${esc(x.status||"-")}</td>
+<td>
+${esc(x.status || "-")}
+</td>
 
 <td>
 
@@ -2365,31 +2641,33 @@ Detail
 }
 
 
-/* ==================================================
+/* =====================================================
 DETAIL PEMINJAMAN
-================================================== */
+===================================================== */
 
 async function showDetail(id){
 
-const peminjaman=
+const peminjaman =
 peminjamanData.find(
-x=>String(x.id)===String(id)
+x => String(x.id) === String(id)
 );
 
 if(!peminjaman)return;
 
+currentDetailId = id;
 
-const {data:details,error}=
+
+const {data:details,error} =
 await db
 .from("peminjaman_detail")
-.select("*")
+.select("id,peminjaman_id,barang_id,qty_pinjam")
 .eq("peminjaman_id",id);
 
 
 if(error){
 
 alert(
-"Gagal mengambil detail: "+
+"Gagal mengambil detail: " +
 error.message
 );
 
@@ -2398,42 +2676,36 @@ return;
 }
 
 
-currentDetailId=id;
+let rows = "";
+
+let total = 0;
 
 
-let barangHtml="";
+for(const d of (details || [])){
 
-
-for(const d of (details||[])){
-
-const b=
+const barang =
 barangData.find(
-x=>String(x.id)===String(d.barang_id)
+x => String(x.id) === String(d.barang_id)
 );
 
-barangHtml+=`
+const qty =
+Number(d.qty_pinjam || 0);
 
-<div class="detail-box">
+total += qty;
 
-<strong>
-${esc(b?.nama || "Barang")}
-</strong>
+rows += `
 
-Kode:
-${esc(b?.kode || "-")}
+<tr>
 
-<br>
+<td>
+${esc(barang?.nama || "Barang")}
+</td>
 
-Kategori:
-${esc(b?.kategori || "-")}
+<td style="text-align:center">
+${format(qty)}
+</td>
 
-<br>
-
-Jumlah:
-<b>${format(d.qty_pinjam)}</b>
-${esc(b?.satuan || "pcs")}
-
-</div>
+</tr>
 
 `;
 
@@ -2441,61 +2713,112 @@ ${esc(b?.satuan || "pcs")}
 
 
 document.getElementById("detailContent")
-.innerHTML=`
+.innerHTML = `
 
 <div class="detail-box">
 
 <strong>Nomor Peminjaman</strong>
-${esc(peminjaman.nomor||"-")}
+
+${esc(peminjaman.nomor || "-")}
 
 </div>
+
 
 <div class="detail-box">
 
 <strong>Peminjam</strong>
-${esc(peminjaman.peminjam)}
+
+${esc(peminjaman.peminjam || "-")}
 
 </div>
+
 
 <div class="detail-box">
 
 <strong>No. HP</strong>
-${esc(peminjaman.no_hp||"-")}
+
+${esc(peminjaman.no_hp || "-")}
 
 </div>
+
 
 <div class="detail-box">
 
 <strong>Keperluan</strong>
-${esc(peminjaman.keperluan||"-")}
+
+${esc(peminjaman.keperluan || "-")}
 
 </div>
+
 
 <div class="detail-box">
 
 <strong>Tanggal Pinjam</strong>
+
 ${formatDate(peminjaman.tanggal_pinjam)}
 
 </div>
 
+
 <div class="detail-box">
 
 <strong>Rencana Kembali</strong>
+
 ${formatDate(peminjaman.tanggal_rencana_kembali)}
 
 </div>
 
+
 <div class="detail-box">
 
 <strong>Status</strong>
-${esc(peminjaman.status||"-")}
+
+${esc(peminjaman.status || "-")}
 
 </div>
 
-<h3>📦 Barang</h3>
 
-${barangHtml ||
-'<div class="empty">Tidak ada detail barang</div>'}
+<h3>📦 Barang Dipinjam</h3>
+
+
+<div class="table-wrap">
+
+<table style="min-width:400px">
+
+<thead>
+
+<tr>
+<th>Barang</th>
+<th style="text-align:center">Jumlah</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+${
+rows ||
+`
+<tr>
+<td colspan="2" class="empty">
+Tidak ada detail barang
+</td>
+</tr>
+`
+}
+
+</tbody>
+
+</table>
+
+</div>
+
+
+<div class="borrow-summary">
+
+<b>Total barang: ${format(total)}</b>
+
+</div>
 
 `;
 
@@ -2504,40 +2827,43 @@ openModal("detailModal");
 }
 
 
-/* ==================================================
+/* =====================================================
 DOWNLOAD DETAIL SEBAGAI GAMBAR
-================================================== */
+TANPA KODE BARANG
+===================================================== */
 
-async function downloadCurrentDetail(){
+async function downloadDetailImage(){
 
 if(!currentDetailId){
 
-alert("Detail peminjaman belum dipilih.");
+alert(
+"Detail peminjaman belum dipilih."
+);
 
 return;
 
 }
 
 
-const peminjaman=
+const peminjaman =
 peminjamanData.find(
-x=>String(x.id)===String(currentDetailId)
+x => String(x.id) === String(currentDetailId)
 );
 
 if(!peminjaman)return;
 
 
-const {data:details,error}=
+const {data:details,error} =
 await db
 .from("peminjaman_detail")
-.select("*")
+.select("barang_id,qty_pinjam")
 .eq("peminjaman_id",currentDetailId);
 
 
 if(error){
 
 alert(
-"Gagal mengambil detail: "+
+"Gagal mengambil detail: " +
 error.message
 );
 
@@ -2546,35 +2872,34 @@ return;
 }
 
 
-const area=
-document.getElementById("downloadArea");
+let rows = "";
+
+let total = 0;
 
 
-let rows="";
+for(const d of (details || [])){
 
-
-for(const d of (details||[])){
-
-const b=
+const barang =
 barangData.find(
-x=>String(x.id)===String(d.barang_id)
+x => String(x.id) === String(d.barang_id)
 );
 
-rows+=`
+const qty =
+Number(d.qty_pinjam || 0);
+
+total += qty;
+
+rows += `
 
 <tr>
 
-<td>${esc(b?.kode||"-")}</td>
-
-<td>${esc(b?.nama||"Barang")}</td>
-
-<td>${esc(b?.kategori||"-")}</td>
-
-<td style="text-align:right">
-${format(d.qty_pinjam)}
+<td>
+${esc(barang?.nama || "Barang")}
 </td>
 
-<td>${esc(b?.satuan||"pcs")}</td>
+<td style="text-align:center">
+${format(qty)}
+</td>
 
 </tr>
 
@@ -2583,69 +2908,105 @@ ${format(d.qty_pinjam)}
 }
 
 
-area.innerHTML=`
+const area =
+document.getElementById("downloadArea");
+
+
+area.innerHTML = `
 
 <div class="download-card">
 
-<h1>📦 GUDANG KARANG 0207</h1>
+<h1>
+📦 Gudang Karang 0207
+</h1>
 
-<h2>DETAIL PEMINJAMAN BARANG</h2>
+<div class="subtitle">
+Detail Peminjaman Barang
+</div>
+
 
 <div class="download-info">
 
-<div class="label">Nomor Peminjaman</div>
-<div>${esc(peminjaman.nomor||"-")}</div>
+<b>Nomor</b>
+<div>${esc(peminjaman.nomor || "-")}</div>
 
-<div class="label">Nama Peminjam</div>
-<div>${esc(peminjaman.peminjam||"-")}</div>
+<b>Peminjam</b>
+<div>${esc(peminjaman.peminjam || "-")}</div>
 
-<div class="label">No. HP</div>
-<div>${esc(peminjaman.no_hp||"-")}</div>
+<b>No. HP</b>
+<div>${esc(peminjaman.no_hp || "-")}</div>
 
-<div class="label">Keperluan</div>
-<div>${esc(peminjaman.keperluan||"-")}</div>
+<b>Keperluan</b>
+<div>${esc(peminjaman.keperluan || "-")}</div>
 
-<div class="label">Tanggal Pinjam</div>
+<b>Tanggal Pinjam</b>
 <div>${formatDate(peminjaman.tanggal_pinjam)}</div>
 
-<div class="label">Rencana Kembali</div>
+<b>Rencana Kembali</b>
 <div>${formatDate(peminjaman.tanggal_rencana_kembali)}</div>
 
-<div class="label">Status</div>
-<div>${esc(peminjaman.status||"-")}</div>
+<b>Status</b>
+<div>${esc(peminjaman.status || "-")}</div>
 
 </div>
 
 
 <h3>Barang yang Dipinjam</h3>
 
+
 <table class="download-table">
 
 <thead>
 
 <tr>
-<th>Kode</th>
-<th>Nama Barang</th>
-<th>Kategori</th>
-<th>Jumlah</th>
-<th>Satuan</th>
+
+<th>
+Nama Barang
+</th>
+
+<th style="width:160px;text-align:center">
+Jumlah
+</th>
+
 </tr>
 
 </thead>
 
 <tbody>
 
-${rows}
+${
+rows ||
+`
+<tr>
+<td colspan="2">
+Tidak ada barang
+</td>
+</tr>
+`
+}
 
 </tbody>
 
 </table>
 
 
+<div style="
+margin-top:15px;
+text-align:right;
+font-size:16px;
+font-weight:bold;
+">
+
+Total Barang:
+${format(total)}
+
+</div>
+
+
 <div class="download-footer">
 
 Gudang Karang 0207<br>
-Sistem Inventaris & Peminjaman Barang
+Dokumen detail peminjaman
 
 </div>
 
@@ -2656,9 +3017,9 @@ Sistem Inventaris & Peminjaman Barang
 
 try{
 
-const canvas=
+const canvas =
 await html2canvas(
-area,
+area.querySelector(".download-card"),
 {
 scale:2,
 backgroundColor:"#ffffff",
@@ -2667,28 +3028,34 @@ useCORS:true
 );
 
 
-const link=
+const image =
+canvas.toDataURL("image/png");
+
+
+const link =
 document.createElement("a");
 
-const nomor=
+link.href = image;
+
+link.download =
+(
 peminjaman.nomor ||
-"peminjaman";
+"detail-peminjaman"
+)
++ ".png";
 
-link.download=
-"Detail-"+nomor+".png";
-
-link.href=
-canvas.toDataURL("image/png");
+document.body.appendChild(link);
 
 link.click();
 
+link.remove();
 
 }catch(err){
 
 console.error(err);
 
 alert(
-"Gagal membuat gambar: "+
+"Gagal membuat gambar: " +
 err.message
 );
 
@@ -2697,44 +3064,44 @@ err.message
 }
 
 
-/* ==================================================
+/* =====================================================
 DASHBOARD
-================================================== */
+===================================================== */
 
 function updateDashboard(){
 
 document.getElementById("totalJenis")
-.textContent=
-format(
-barangData.filter(x=>x.active!==false).length
-);
+.textContent =
+format(barangData.length);
 
 
-const total=
+const total =
 barangData.reduce(
-(a,x)=>a+Number(x.stok||0),
+(a,x) =>
+a + Number(x.stok || 0),
 0
 );
 
 
 document.getElementById("totalStok")
-.textContent=
+.textContent =
 format(total);
 
 
 document.getElementById("totalLokasi")
-.textContent=
+.textContent =
 format(lokasiData.length);
 
 
-const aktif=
-peminjamanData.filter(x=>
-String(x.status||"").toLowerCase()!=="selesai"
+const aktif =
+peminjamanData.filter(
+x =>
+String(x.status).toLowerCase() !== "selesai"
 ).length;
 
 
 document.getElementById("totalPinjam")
-.textContent=
+.textContent =
 format(aktif);
 
 
@@ -2745,43 +3112,43 @@ renderDashboard();
 
 function renderDashboard(){
 
-const body=
+const body =
 document.getElementById("dashboardBody");
 
-const activeBarang=
-barangData.filter(
-x=>x.active!==false
-);
+if(!barangData.length){
 
-if(!activeBarang.length){
-
-body.innerHTML=`
+body.innerHTML = `
 <tr>
-<td colspan="6" class="empty">
+<td colspan="4" class="empty">
 Belum ada barang
 </td>
-</tr>`;
+</tr>
+`;
 
 return;
 
 }
 
-body.innerHTML=
-activeBarang.map(x=>`
+body.innerHTML =
+barangData.map(x => `
 
 <tr>
 
-<td>${esc(x.kode)}</td>
+<td>
+${esc(x.kode || "-")}
+</td>
 
-<td>${esc(x.nama)}</td>
+<td>
+${esc(x.nama || "-")}
+</td>
 
-<td>${esc(x.kategori||"-")}</td>
+<td>
+${format(x.stok)}
+</td>
 
-<td>${format(x.stok)}</td>
-
-<td>${esc(x.satuan||"pcs")}</td>
-
-<td>${getLokasi(x.lokasi_id)}</td>
+<td>
+${getLokasi(x.lokasi_id)}
+</td>
 
 </tr>
 
@@ -2790,15 +3157,15 @@ activeBarang.map(x=>`
 }
 
 
-/* ==================================================
+/* =====================================================
 NAVIGATION
-================================================== */
+===================================================== */
 
 function showPage(page,button){
 
 document
 .querySelectorAll(".page")
-.forEach(x=>
+.forEach(x =>
 x.classList.remove("active")
 );
 
@@ -2806,9 +3173,10 @@ document
 .getElementById(page)
 .classList.add("active");
 
+
 document
 .querySelectorAll("nav button")
-.forEach(x=>
+.forEach(x =>
 x.classList.remove("active")
 );
 
@@ -2817,14 +3185,14 @@ button.classList.add("active");
 }
 
 
-/* ==================================================
+/* =====================================================
 MODAL
-================================================== */
+===================================================== */
 
 function openModal(id){
 
 document.getElementById(id)
-.style.display="block";
+.style.display = "block";
 
 }
 
@@ -2832,43 +3200,46 @@ document.getElementById(id)
 function closeModal(id){
 
 document.getElementById(id)
-.style.display="none";
+.style.display = "none";
 
 }
 
 
-window.onclick=function(e){
+window.onclick = function(e){
 
-if(e.target.classList.contains("modal")){
+if(
+e.target.classList.contains("modal")
+){
 
-e.target.style.display="none";
+e.target.style.display = "none";
 
 }
 
 };
 
 
-/* ==================================================
+/* =====================================================
 HELPERS
-================================================== */
+===================================================== */
 
 function getLokasi(id){
 
-const x=
+const x =
 lokasiData.find(
-a=>String(a.id)===String(id)
+a =>
+String(a.id) === String(id)
 );
 
 return x
-?esc(x.nama)
-:"-";
+? esc(x.nama)
+: "-";
 
 }
 
 
 function format(n){
 
-return Number(n||0)
+return Number(n || 0)
 .toLocaleString("id-ID");
 
 }
@@ -2893,15 +3264,17 @@ year:"numeric"
 
 function today(){
 
-const d=new Date();
+const d =
+new Date();
 
-const y=d.getFullYear();
+const y =
+d.getFullYear();
 
-const m=
+const m =
 String(d.getMonth()+1)
 .padStart(2,"0");
 
-const day=
+const day =
 String(d.getDate())
 .padStart(2,"0");
 
@@ -2912,8 +3285,10 @@ return `${y}-${m}-${day}`;
 
 function esc(v){
 
-if(v===null||v===undefined)
-return "";
+if(
+v === null ||
+v === undefined
+)return "";
 
 return String(v)
 .replace(/&/g,"&amp;")
@@ -2934,39 +3309,43 @@ return esc(v);
 
 function showError(id,message){
 
-const box=
+const box =
 document.getElementById(id);
 
 if(!box)return;
 
-box.textContent=message;
+box.textContent =
+message;
 
-box.style.display="block";
+box.style.display =
+"block";
 
 }
 
 
 function hideError(id){
 
-const box=
+const box =
 document.getElementById(id);
 
 if(box){
 
-box.style.display="none";
-box.textContent="";
+box.style.display =
+"none";
+
+box.textContent = "";
 
 }
 
 }
 
 
-/* ==================================================
-AUTH
-================================================== */
+/* =====================================================
+AUTH LISTENER
+===================================================== */
 
 db.auth.onAuthStateChange(
-(event,session)=>{
+(event,session) => {
 
 if(session){
 
@@ -2981,9 +3360,9 @@ showLogin();
 });
 
 
-/* ==================================================
+/* =====================================================
 START
-================================================== */
+===================================================== */
 
 checkSession();
 
